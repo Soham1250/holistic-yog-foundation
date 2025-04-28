@@ -11,7 +11,7 @@ const Header: React.FC<HeaderProps> = ({ onSidebarToggle }) => {
   
   return (
     <header
-      className="sticky top-0 z-50 w-full flex items-center justify-between px-4 sm:px-8 py-3 bg-gradient-to-b from-[#b6e3ff] via-[#b6e3ff] to-white"
+      className="sticky top-0 z-50 w-full flex items-center justify-between px-4 sm:px-8 py-3 bg-gradient-to-b from-[#b6e3ff] via-[#b6e3ff] to-transparent"
       aria-label="Main navigation header"
     >
       {/* Hamburger */}

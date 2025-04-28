@@ -129,23 +129,21 @@ const CourseSection: React.FC = () => {
 
   return (
     <section className="pt-28 pb-12 px-4 md:px-8 max-w-7xl mx-auto">
-      {/* Courses Catalog Header */}
-      <div className="mb-10">
-        <h2 className="text-4xl font-bold text-gray-800 mb-4">Courses Catalog</h2>
-        <p className="text-gray-600 max-w-3xl">
+      {/* Courses Catalog Search Section */}
+      <div className="mb-12 p-6 bg-blue-50 rounded-lg shadow-sm">
+        <h2 className="text-4xl font-bold text-gray-800 mb-6">Courses Catalog</h2>
+        <p className="text-gray-600 max-w-3xl mb-8">
           Explore a diverse range of yoga courses crafted for every level. 
           Whether you're a beginner or an advanced practitioner, find the perfect 
           program to deepen your practice and transform your journey
         </p>
-      </div>
-
-      {/* Search Bar */}
-      <div className="flex mb-12">
-        <div className="relative flex-grow max-w-3xl">
+        
+        {/* Search Bar */}
+        <div className="relative max-w-3xl mx-auto">
           <input
             type="text"
             placeholder="What do you want to learn today?"
-            className="w-full px-4 py-3 rounded-l-full border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-400"
+            className="w-full px-5 py-3 pr-12 rounded-full border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-400"
           />
           <button className="absolute right-0 top-0 h-full bg-[#E05E0E] text-white px-6 rounded-r-full hover:bg-[#d05000] transition-colors">
             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -157,11 +155,12 @@ const CourseSection: React.FC = () => {
 
       {/* Most Popular Section */}
       <div className="mb-8">
-        <div className="flex justify-between items-center mb-6">
+        <div className="flex justify-between items-center mb-6 border-t border-gray-200 pt-6">
           <h3 className="text-2xl font-bold text-gray-800">Most Popular</h3>
           <button 
             onClick={scrollRight}
             className="flex items-center justify-center w-10 h-10 rounded-full bg-white shadow-md hover:shadow-lg transition-shadow"
+            aria-label="Scroll right"
           >
             <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
@@ -177,11 +176,15 @@ const CourseSection: React.FC = () => {
             onMouseMove={handleMouseMove}
             onMouseUp={handleMouseUp}
             onMouseLeave={handleMouseLeave}
-            className="flex gap-6 overflow-x-auto pb-4 scrollbar-hide cursor-grab active:cursor-grabbing"
+            className="flex gap-6 overflow-x-auto pb-4 scrollbar-hide cursor-grab active:cursor-grabbing select-none"
             style={{ 
               scrollbarWidth: 'none', 
               msOverflowStyle: 'none',
-              WebkitOverflowScrolling: 'touch'
+              WebkitOverflowScrolling: 'touch',
+              WebkitUserSelect: 'none',
+              MozUserSelect: 'none',
+              msUserSelect: 'none',
+              userSelect: 'none'
             }}
           >
             {coursesData.map(course => (
