@@ -1,4 +1,5 @@
 import Image from "next/image";
+import CourseSection from '../components/CourseSection';
 
 export default function Home() {
   return (
@@ -51,6 +52,9 @@ export default function Home() {
           </a>
         </div>
       </main>
+      <div className="min-h-screen font-[family-name:var(--font-geist-sans)]">
+        <CourseSection />
+      </div>
       <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
         <a
           className="flex items-center gap-2 hover:underline hover:underline-offset-4"
