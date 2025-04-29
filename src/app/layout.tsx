@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Layout from '../components/Layout';
+import { SectionProvider } from '@/contexts/SectionContext';
 
 const geist = Geist({ 
   subsets: ["latin"],
@@ -20,14 +21,18 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+}: {
+  children: React.ReactNode
+}) {
   return (
     <html lang="en" className={`${geist.variable} ${geistMono.variable}`}>
       <body className="bg-white">
-        <Layout>{children}</Layout>
+        <SectionProvider>
+          <Layout>
+            {children}
+          </Layout>
+        </SectionProvider>
       </body>
     </html>
-  );
+  )
 }

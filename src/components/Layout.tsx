@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import Header from './Header';
 import Sidebar from './Sidebar';
+import Footer from './Footer';
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -63,6 +64,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
           <div className="p-4 sm:p-6 lg:p-8">
             {children}
           </div>
+          <Footer />
         </main>
       </div>
     </div>
