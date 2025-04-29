@@ -35,48 +35,37 @@ const menuItems = [
 
 const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose, onMouseEnter, onMouseLeave }) => {
   return (
-    <>
-      {/* Overlay to capture clicks outside sidebar when open on mobile */}
-      {isOpen && (
-        <div 
-          className="md:hidden fixed inset-0 z-20 bg-black bg-opacity-50 transition-opacity"
-          onClick={onClose}
-        />
-      )}
-
-      {/* Sidebar */}
-      <aside
-        className={`fixed top-0 left-0 z-30 h-full bg-[#353232] transition-all duration-300 ease-in-out ${
-          isOpen ? 'w-64' : 'w-16'
-        }`}
-        onMouseEnter={onMouseEnter}
-        onMouseLeave={onMouseLeave}
-      >
-        <nav className="h-full flex flex-col pt-16">
-          <ul className="flex-1 space-y-0">
-            {menuItems.map((item) => (
-              <li key={item.name}>
-                <Link
-                  href={item.href}
-                  className="flex items-center px-4 py-3 text-white hover:bg-[#474343] transition-colors"
+    <aside
+      className={`fixed top-16 left-0 z-20 h-[calc(100vh-4rem)] bg-[#353232] transition-all duration-300 ease-in-out ${
+        isOpen ? 'w-64' : 'w-16'
+      }`}
+      onMouseEnter={onMouseEnter}
+      onMouseLeave={onMouseLeave}
+    >
+      <nav className="h-full flex flex-col">
+        <ul className="flex-1 space-y-0">
+          {menuItems.map((item) => (
+            <li key={item.name}>
+              <Link
+                href={item.href}
+                className="flex items-center px-4 py-3 text-white hover:bg-[#474343] transition-colors"
+              >
+                <div className="w-8 h-8 flex items-center justify-center">
+                  <item.icon className="w-6 h-6" />
+                </div>
+                <span 
+                  className={`ml-4 text-sm font-medium tracking-wider whitespace-nowrap transition-opacity duration-300 ${
+                    isOpen ? 'opacity-100' : 'opacity-0 absolute'
+                  }`}
                 >
-                  <div className="w-8 h-8 flex items-center justify-center">
-                    <item.icon className="w-6 h-6" />
-                  </div>
-                  <span 
-                    className={`ml-4 text-sm font-medium tracking-wider whitespace-nowrap transition-opacity duration-300 ${
-                      isOpen ? 'opacity-100' : 'opacity-0 absolute'
-                    }`}
-                  >
-                    {item.name}
-                  </span>
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </nav>
-      </aside>
-    </>
+                  {item.name}
+                </span>
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </nav>
+    </aside>
   );
 };
 
