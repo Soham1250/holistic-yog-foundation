@@ -2,6 +2,7 @@
 
 import React from 'react';
 import ComingSoonButton from '../ui/ComingSoonButton';
+import { SparklesIcon } from '@heroicons/react/24/outline';
 
 interface AboutUsSectionProps {
   title?: string;
@@ -24,7 +25,14 @@ const AboutUsSection: React.FC<AboutUsSectionProps> = ({
             <div className="absolute inset-0 bg-gray-200 flex items-center justify-center">
               <div className="w-full h-full relative">
                 <div className="absolute inset-0 bg-gradient-to-br from-gray-100 to-gray-300 flex items-center justify-center">
-                  <p className="text-gray-600 font-medium">Yoga Group Image</p>
+                  <img 
+                    src="/images/pexels-yankrukov-8436587.jpg" 
+                    alt="Yoga Group Session" 
+                    className="w-full h-full object-cover"
+                    loading="lazy"
+                    width="600"
+                    height="400"
+                  />
                 </div>
               </div>
             </div>
@@ -33,7 +41,10 @@ const AboutUsSection: React.FC<AboutUsSectionProps> = ({
         
         <div className="md:w-1/2">
           <div className="flex justify-between items-start mb-6">
-            <h2 className="text-3xl font-bold text-gray-800">{title}</h2>
+            <h2 className="text-3xl font-bold text-gray-800 flex items-center">
+              <SparklesIcon className="w-6 h-6 text-blue-500 mr-2" />
+              {title}
+            </h2>
             <ComingSoonButton text="JOIN US" />
           </div>
           

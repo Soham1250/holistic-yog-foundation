@@ -2,6 +2,14 @@
 
 import React from 'react';
 import ComingSoonButton from '../ui/ComingSoonButton';
+import { 
+  CalendarIcon, 
+  ClockIcon, 
+  MapPinIcon, 
+  BoltIcon,
+  MegaphoneIcon,
+  ArrowRightIcon
+} from '@heroicons/react/24/outline';
 
 interface EventDetails {
   title: string;
@@ -35,7 +43,10 @@ const BannerSection: React.FC<BannerSectionProps> = ({
   return (
     <div className="bg-[#FDF7F2] rounded-lg p-8">
       <div className="text-center mb-6">
-        <h2 className="text-2xl font-bold mb-2 text-black">{title}</h2>
+        <div className="flex items-center justify-center mb-2">
+          <MegaphoneIcon className="w-6 h-6 text-blue-500 mr-2" />
+          <h2 className="text-2xl font-bold text-black">{title}</h2>
+        </div>
         <p className="text-gray-600">{subtitle}</p>
       </div>
       
@@ -45,7 +56,12 @@ const BannerSection: React.FC<BannerSectionProps> = ({
           <div className="md:w-2/5">
             <div className="h-48 md:h-full rounded-lg overflow-hidden relative bg-gray-200">
               <div className="absolute inset-0 bg-gradient-to-br from-gray-700 to-gray-900 flex items-center justify-center">
-                <p className="text-white">Conference Image</p>
+                <img 
+                  src="/images/conference/pexels-bertellifotografia-3321791.jpg" 
+                  alt="Conference Image" 
+                  className="w-full h-full object-cover"
+                  loading="lazy"
+                />
               </div>
             </div>
           </div>
@@ -54,9 +70,7 @@ const BannerSection: React.FC<BannerSectionProps> = ({
           <div className="md:w-3/5">
             <div className="flex items-start mb-4">
               <div className="bg-white p-2 rounded-lg mr-3">
-                <svg className="w-5 h-5 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
-                </svg>
+                <BoltIcon className="w-5 h-5 text-blue-500" />
               </div>
               <h3 className="text-xl font-bold text-gray-800">{event.title}</h3>
             </div>
@@ -64,7 +78,7 @@ const BannerSection: React.FC<BannerSectionProps> = ({
             <div className="ml-10 mb-6">
               <ul className="space-y-1">
                 <li className="flex items-start">
-                  <span className="w-1.5 h-1.5 bg-gray-800 rounded-full mt-2 mr-2 flex-shrink-0"></span>
+                  <span className="w-1.5 h-1.5 bg-blue-500 rounded-full mt-2 mr-2 flex-shrink-0"></span>
                   <p className="text-gray-700">{event.description}</p>
                 </li>
               </ul>
@@ -72,25 +86,18 @@ const BannerSection: React.FC<BannerSectionProps> = ({
             
             <div className="space-y-3 ml-10">
               <div className="flex items-center">
-                <svg className="w-5 h-5 text-gray-700 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
-                </svg>
-                <p className="text-gray-700">Date: {event.date}</p>
+                <CalendarIcon className="w-5 h-5 text-blue-500 mr-3" />
+                <p className="text-gray-700">Date: <span className="font-medium">{event.date}</span></p>
               </div>
               
               <div className="flex items-center">
-                <svg className="w-5 h-5 text-gray-700 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                </svg>
-                <p className="text-gray-700">Time: {event.time}</p>
+                <ClockIcon className="w-5 h-5 text-blue-500 mr-3" />
+                <p className="text-gray-700">Time: <span className="font-medium">{event.time}</span></p>
               </div>
               
               <div className="flex items-center">
-                <svg className="w-5 h-5 text-gray-700 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
-                </svg>
-                <p className="text-gray-700">Venue: {event.venue}</p>
+                <MapPinIcon className="w-5 h-5 text-blue-500 mr-3" />
+                <p className="text-gray-700">Venue: <span className="font-medium">{event.venue}</span></p>
               </div>
             </div>
             

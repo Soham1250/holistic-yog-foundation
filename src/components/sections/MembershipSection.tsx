@@ -2,6 +2,7 @@
 
 import React from 'react';
 import ComingSoonButton from '../ui/ComingSoonButton';
+import { CreditCardIcon } from '@heroicons/react/24/outline';
 
 interface MembershipPlan {
   id: string;
@@ -41,7 +42,10 @@ const MembershipSection: React.FC<MembershipSectionProps> = ({
     <div className="bg-[#fdf7f2] rounded-lg p-8">
       <div className="flex flex-col md:flex-row items-center gap-8">
         <div className="md:w-1/2 space-y-4">
-          <h2 className="text-3xl font-bold text-gray-800">{plan.title}</h2>
+          <h2 className="text-3xl font-bold text-gray-800 flex items-center">
+            <CreditCardIcon className="w-6 h-6 text-blue-500 mr-2" />
+            {plan.title}
+          </h2>
           <div className="flex items-baseline">
             <span className="text-4xl font-bold text-gray-900">{plan.price}rs</span>
             <span className="text-xl text-gray-600 ml-2">/ {plan.duration}</span>
@@ -50,9 +54,12 @@ const MembershipSection: React.FC<MembershipSectionProps> = ({
           <div className="relative h-48 md:h-64 w-full rounded-lg overflow-hidden mt-4">
             <div className="absolute inset-0 bg-gray-200">
               <img 
-                src="/membership.jpg" 
+                src="/images/join us.jpg" 
                 alt="Yoga membership" 
                 className="w-full h-full object-cover"
+                loading="lazy"
+                width="600"
+                height="400"
                 onError={(e) => {
                   const target = e.target as HTMLImageElement;
                   target.onerror = null;

@@ -42,7 +42,7 @@ const HeadingSection: React.FC<HeadingSectionProps> = ({
             ))}
           </div>
           <div className="ml-3">
-            <span className="text-sm font-medium">10k+</span>
+            <span className="text-sm font-medium text-black">10k+</span>
             <p className="text-xs text-gray-500">More than 5k+ members are connected with us</p>
           </div>
         </div>

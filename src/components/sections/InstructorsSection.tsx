@@ -1,6 +1,14 @@
 "use client";
 
 import React, { useRef, useState } from 'react';
+import { 
+  AcademicCapIcon, 
+  LanguageIcon, 
+  ClockIcon, 
+  CheckBadgeIcon,
+  UserGroupIcon,
+  ArrowRightIcon
+} from '@heroicons/react/24/outline';
 
 interface InstructorQualification {
   title: string;
@@ -12,7 +20,6 @@ interface Instructor {
   name: string;
   specialty?: string;
   bio?: string;
-  imageUrl?: string;
   qualifications: InstructorQualification[];
 }
 
@@ -150,24 +157,16 @@ const InstructorsSection: React.FC<InstructorsSectionProps> = ({
           {instructors.map((instructor) => (
             <div 
               key={instructor.id} 
-              className={`flex-shrink-0 w-48 cursor-pointer ${activeInstructor.id === instructor.id ? 'ring-2 ring-orange-500' : ''}`}
+              className={`flex-shrink-0 w-48 cursor-pointer transition-all duration-200 ${activeInstructor.id === instructor.id ? 'bg-blue-50 rounded-lg shadow-md transform scale-105' : ''}`}
               onClick={() => setActiveInstructor(instructor)}
               style={{ userSelect: 'none' }}
             >
               <div className="rounded-full overflow-hidden h-48 w-48 mb-3 bg-gray-200">
-                {instructor.imageUrl ? (
-                  <img 
-                    src={instructor.imageUrl} 
-                    alt={instructor.name} 
-                    className="w-full h-full object-cover"
-                  />
-                ) : (
-                  <div className="w-full h-full bg-gradient-to-br from-gray-300 to-gray-400 flex items-center justify-center">
-                    <span className="text-3xl font-semibold text-white">
-                      {instructor.name.charAt(0)}
-                    </span>
-                  </div>
-                )}
+                <div className="w-full h-full bg-gradient-to-br from-blue-100 to-blue-300 flex items-center justify-center">
+                  <span className="text-3xl font-semibold text-white">
+                    {instructor.name.charAt(0)}
+                  </span>
+                </div>
               </div>
               <div className="text-center">
                 <h3 className="font-bold text-black">{instructor.name}</h3>
@@ -184,7 +183,11 @@ const InstructorsSection: React.FC<InstructorsSectionProps> = ({
         <div className="space-y-8">
           {activeInstructor.qualifications.slice(0, 2).map((qualification, index) => (
             <div key={index} className="flex flex-col">
-              <h3 className="font-bold text-black mb-2">{qualification.title}</h3>
+              <div className="flex items-center mb-2">
+                {index === 0 && <UserGroupIcon className="w-5 h-5 text-blue-500 mr-2" />}
+                {index === 1 && <LanguageIcon className="w-5 h-5 text-blue-500 mr-2" />}
+                <h3 className="font-bold text-black">{qualification.title}</h3>
+              </div>
               <p className="text-gray-600 text-sm">{qualification.description}</p>
             </div>
           ))}
@@ -194,7 +197,11 @@ const InstructorsSection: React.FC<InstructorsSectionProps> = ({
         <div className="space-y-8">
           {activeInstructor.qualifications.slice(2, 4).map((qualification, index) => (
             <div key={index} className="flex flex-col">
-              <h3 className="font-bold text-black mb-2">{qualification.title}</h3>
+              <div className="flex items-center mb-2">
+                {index === 0 && <ClockIcon className="w-5 h-5 text-blue-500 mr-2" />}
+                {index === 1 && <CheckBadgeIcon className="w-5 h-5 text-blue-500 mr-2" />}
+                <h3 className="font-bold text-black">{qualification.title}</h3>
+              </div>
               <p className="text-gray-600 text-sm">{qualification.description}</p>
             </div>
           ))}
@@ -202,8 +209,9 @@ const InstructorsSection: React.FC<InstructorsSectionProps> = ({
       </div>
       
       <div className="text-center mt-8">
-        <button className="text-gray-700 font-medium border-b-2 border-gray-700 pb-1 hover:text-gray-900 hover:border-gray-900 transition-colors">
+        <button className="text-gray-700 font-medium border-b-2 border-gray-700 pb-1 hover:text-gray-900 hover:border-gray-900 transition-colors flex items-center justify-center mx-auto">
           VIEW ALL INSTRUCTORS
+          <ArrowRightIcon className="w-4 h-4 ml-1" />
         </button>
       </div>
       
