@@ -1,23 +1,43 @@
 "use client";
-import React, { useState } from "react";
-import Header from "./Header";
-import Sidebar from "./Sidebar";
 
-const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+import React, { useState } from 'react';
+import Header from './Header';
+import Sidebar from './Sidebar';
+
+interface LayoutProps {
+  children: React.ReactNode;
+}
+
+const Layout: React.FC<LayoutProps> = ({ children }) => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
-  const [sidebarHovered, setSidebarHovered] = useState(false);
+
+  const toggleSidebar = () => {
+    setSidebarOpen(!sidebarOpen);
+  };
+
+  const handleMouseEnter = () => {
+    setSidebarOpen(true);
+  };
+
+  const handleMouseLeave = () => {
+    setSidebarOpen(false);
+  };
 
   return (
-    <div className="min-h-screen flex bg-white">
+    <div className="flex h-screen bg-white">
       <Sidebar 
-        isOpen={sidebarOpen || sidebarHovered} 
-        onClose={() => setSidebarOpen(false)}
-        onMouseEnter={() => setSidebarHovered(true)}
-        onMouseLeave={() => setSidebarHovered(false)}
+        isOpen={sidebarOpen} 
+        onClose={() => setSidebarOpen(false)} 
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
       />
-      <div className="flex-1 flex flex-col min-h-screen">
-        <Header onSidebarToggle={() => setSidebarOpen((open) => !open)} />
-        <main className="flex-1 bg-white pt-2">{children}</main>
+      
+      <div className={`flex-1 flex flex-col transition-all duration-300 ${sidebarOpen ? 'ml-64' : 'ml-16'}`}>
+        <Header onSidebarToggle={toggleSidebar} />
+        
+        <main className="flex-1 overflow-y-auto p-4 sm:p-6 lg:p-8">
+          {children}
+        </main>
       </div>
     </div>
   );
