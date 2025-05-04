@@ -1,0 +1,52 @@
+{
+  "title": "Connect and Grow With Top Instructor",
+  "subtitle": "Join our sessions led by experienced instructors and take your yoga practice to the next level with guidance, community, and inspiration.",
+  "instructors": [
+    {
+      "id": "1",
+      "name": "Sophia Bennett",
+      "specialty": "Senior Yoga Instructor",
+      "qualifications": [
+        {
+          "title": "Trained 500+ members",
+          "description": "Successfully trained over 500 individuals, helping them transform their lifestyle through personalized yoga sessions."
+        },
+        {
+          "title": "Fluent in Hindi, Marathi, and English",
+          "description": "Fluent in Hindi, Marathi, and English, making sessions comfortable for a diverse range of learners."
+        },
+        {
+          "title": "20+ Years of Teaching Experience",
+          "description": "Bringing over 20 years of rich experience, guiding students of all age groups with patience and wisdom."
+        },
+        {
+          "title": "Certified in Hatha, Vinyasa & Pranayama",
+          "description": "Professionally certified in Hatha, Vinyasa, and Pranayama, offering a balanced and holistic yoga journey."
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "name": "Liam Chen",
+      "specialty": "Meditation & Mindfulness",
+      "qualifications": [
+        {
+          "title": "Trained 500+ members",
+          "description": "Successfully trained over 500 individuals, helping them transform their lifestyle through personalized yoga sessions."
+        },
+        {
+          "title": "Fluent in Hindi, Marathi, and English",
+          "description": "Fluent in Hindi, Marathi, and English, making sessions comfortable for a diverse range of learners."
+        },
+        {
+          "title": "20+ Years of Teaching Experience",
+          "description": "Bringing over 20 years of rich experience, guiding students of all age groups with patience and wisdom."
+        },
+        {
+          "title": "Certified in Hatha, Vinyasa & Pranayama",
+          "description": "Professionally certified in Hatha, Vinyasa, and Pranayama, offering a balanced and holistic yoga journey."
+        }
+      ]
+    }
+  ]
+}

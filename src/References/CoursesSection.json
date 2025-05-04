@@ -1,0 +1,48 @@
+{
+  "title": "Explore Our Yoga Courses For Every Level",
+  "description": "At Holistic Yog, we offer courses for all levels. Whether you're a beginner or advanced, our sessions help you build strength, flexibility, and inner peace.",
+  "courses": [
+    {
+      "id": "1",
+      "title": "Beginner Yoga",
+      "description": "Easy yoga poses for a fresh start",
+      "imageSrc": "/images/pexels-olly-3775593.jpg",
+      "buttonText": "JOIN NOW"
+    },
+    {
+      "id": "2",
+      "title": "Vinyasa Yoga",
+      "description": "A dynamic class, linking breath to movement",
+      "imageSrc": "/images/pexels-olly-917732.jpg",
+      "buttonText": "JOIN NOW"
+    },
+    {
+      "id": "3",
+      "title": "Hatha Yoga",
+      "description": "A gentle class focusing on slow paced stretching",
+      "imageSrc": "/images/pexels-prasanthinturi-1051838.jpg",
+      "buttonText": "JOIN NOW"
+    },
+    {
+      "id": "4",
+      "title": "Power Yoga",
+      "description": "A gentle class focusing on slow paced stretching",
+      "imageSrc": "/images/pexels-kampus-6698513.jpg",
+      "buttonText": "JOIN NOW"
+    },
+    {
+      "id": "5",
+      "title": "Restorative Yoga",
+      "description": "Gentle poses to relax and rejuvenate",
+      "imageSrc": "/images/pexels-vlada-karpovich-4534689.jpg",
+      "buttonText": "JOIN NOW"
+    },
+    {
+      "id": "6",
+      "title": "Yin Yoga",
+      "description": "Deep stretching for improved flexibility",
+      "imageSrc": "/images/pexels-yankrukov-8436715.jpg",
+      "buttonText": "JOIN NOW"
+    }
+  ]
+}

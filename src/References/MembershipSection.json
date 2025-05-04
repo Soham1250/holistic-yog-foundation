@@ -1,0 +1,17 @@
+{
+  "title": "Membership",
+  "description": "Join our community and transform your life with our holistic approach to wellness.",
+  "plan": {
+    "id": "1",
+    "title": "Annual Membership",
+    "price": 799,
+    "duration": "month",
+    "features": [
+      "Unlimited access to all yoga classes",
+      "Access to guided meditation & mindfulness programs",
+      "Priority booking for special events",
+      "20% discount on workshops and retreats"
+    ],
+    "isPopular": true
+  }
+}

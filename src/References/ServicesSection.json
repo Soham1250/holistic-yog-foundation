@@ -1,0 +1,34 @@
+{
+  "title": "Achieve More With Our Services",
+  "description": "At Holistic Yog Foundation, we offer a comprehensive range of carefully designed services designed to support every stage of life with the healing, empowering, and transformative power of yoga.",
+  "services": [
+    {
+      "id": "1",
+      "title": "Yoga for Seniors",
+      "description": "Specialized gentle classes designed to enhance flexibility, balance, and joint mobility. Restoring independence and joy in everyday living.",
+      "icon": "🧘‍♀️",
+      "iconBg": "bg-blue-200"
+    },
+    {
+      "id": "2",
+      "title": "Therapeutic Yoga",
+      "description": "Specialized sessions with certified lifestyle consultants like hypertension, arthritis, stress, and anxiety conditions.",
+      "icon": "💆",
+      "iconBg": "bg-blue-200"
+    },
+    {
+      "id": "3",
+      "title": "Teacher Training & Certification",
+      "description": "Workshops and nature retreats designed to recharge your body, mind, and soul while learning to integrate ancient wisdom with modern wellness practices.",
+      "icon": "🎓",
+      "iconBg": "bg-blue-200"
+    },
+    {
+      "id": "4",
+      "title": "Workshops & Retreats",
+      "description": "Comprehensive courses for those seeking to become certified yoga instructors, rooted in traditional principles adapted for modern needs.",
+      "icon": "🏕️",
+      "iconBg": "bg-blue-200"
+    }
+  ]
+}

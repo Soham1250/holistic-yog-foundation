@@ -1,0 +1,218 @@
+{
+  "heading": {
+    "title": "Yoga Education for an Enlightened Future",
+    "subtitle": "Empowering seniors & communities through yoga. Blending tradition and wellness to foster strength, balance, and peace for every stage of life."
+  },
+  "images": {
+    "images": [
+      {
+        "id": "1",
+        "src": "/images/pexels-shu-lei-2809836-13849063.jpg",
+        "alt": "Yoga pose by the ocean",
+        "width": 400,
+        "height": 300
+      },
+      {
+        "id": "2",
+        "src": "/images/pexels-gabby-k-5384538.jpg",
+        "alt": "Meditation session",
+        "width": 400,
+        "height": 300
+      }
+    ]
+  },
+  "aboutUs": {
+    "title": "About us",
+    "description": "At Holistic Yog Foundation, we are a community-driven nonprofit dedicated to spreading the transformative power of yoga and mindfulness. Our mission is to empower individuals of all ages through the ancient wisdom of yoga blended with modern wellness practices.",
+    "vision": "To create a world where yoga education becomes a pillar of lifelong wellness, nurturing physical strength, emotional awareness, and inner peace for all generations.",
+    "mission": "To make yoga education universally accessible and inclusive, nurturing every individual especially seniors with practices that enhance physical vitality, mental clarity, and emotional well-being."
+  },
+  "instructors": {
+    "title": "Connect and Grow With Top Instructor",
+    "subtitle": "Join our sessions led by experienced instructors and take your yoga practice to the next level with guidance, community, and inspiration.",
+    "instructors": [
+      {
+        "id": "1",
+        "name": "Sophia Bennett",
+        "specialty": "Senior Yoga Instructor",
+        "qualifications": [
+          {
+            "title": "Trained 500+ members",
+            "description": "Successfully trained over 500 individuals, helping them transform their lifestyle through personalized yoga sessions."
+          },
+          {
+            "title": "Fluent in Hindi, Marathi, and English",
+            "description": "Fluent in Hindi, Marathi, and English, making sessions comfortable for a diverse range of learners."
+          },
+          {
+            "title": "20+ Years of Teaching Experience",
+            "description": "Bringing over 20 years of rich experience, guiding students of all age groups with patience and wisdom."
+          },
+          {
+            "title": "Certified in Hatha, Vinyasa & Pranayama",
+            "description": "Professionally certified in Hatha, Vinyasa, and Pranayama, offering a balanced and holistic yoga journey."
+          }
+        ]
+      },
+      {
+        "id": "2",
+        "name": "Liam Chen",
+        "specialty": "Meditation & Mindfulness",
+        "qualifications": [
+          {
+            "title": "Trained 500+ members",
+            "description": "Successfully trained over 500 individuals, helping them transform their lifestyle through personalized yoga sessions."
+          },
+          {
+            "title": "Fluent in Hindi, Marathi, and English",
+            "description": "Fluent in Hindi, Marathi, and English, making sessions comfortable for a diverse range of learners."
+          },
+          {
+            "title": "20+ Years of Teaching Experience",
+            "description": "Bringing over 20 years of rich experience, guiding students of all age groups with patience and wisdom."
+          },
+          {
+            "title": "Certified in Hatha, Vinyasa & Pranayama",
+            "description": "Professionally certified in Hatha, Vinyasa, and Pranayama, offering a balanced and holistic yoga journey."
+          }
+        ]
+      }
+    ]
+  },
+  "banner": {
+    "title": "Upcoming",
+    "subtitle": "Stay informed. Stay connected. Be a part of our next big gathering.",
+    "event": {
+      "title": "Ayurveda & Mindfulness Conference",
+      "description": "Dive into traditional healing practices and their integration into modern lifestyle therapies.",
+      "date": "July 8, 2025",
+      "time": "10:00 AM - 5:30 PM",
+      "venue": "Matunga Mumbai, India"
+    },
+    "buttonText": "Register Now"
+  },
+  "membership": {
+    "title": "Membership",
+    "description": "Join our community and transform your life with our holistic approach to wellness.",
+    "plan": {
+      "id": "1",
+      "title": "Annual Membership",
+      "price": 799,
+      "duration": "month",
+      "features": [
+        "Unlimited access to all yoga classes",
+        "Access to guided meditation & mindfulness programs",
+        "Priority booking for special events",
+        "20% discount on workshops and retreats"
+      ],
+      "isPopular": true
+    }
+  },
+  "services": {
+    "title": "Achieve More With Our Services",
+    "description": "At Holistic Yog Foundation, we offer a comprehensive range of carefully designed services designed to support every stage of life with the healing, empowering, and transformative power of yoga.",
+    "services": [
+      {
+        "id": "1",
+        "title": "Yoga for Seniors",
+        "description": "Specialized gentle classes designed to enhance flexibility, balance, and joint mobility. Restoring independence and joy in everyday living.",
+        "icon": "🧘‍♀️",
+        "iconBg": "bg-blue-200"
+      },
+      {
+        "id": "2",
+        "title": "Therapeutic Yoga",
+        "description": "Specialized sessions with certified lifestyle consultants like hypertension, arthritis, stress, and anxiety conditions.",
+        "icon": "💆",
+        "iconBg": "bg-blue-200"
+      },
+      {
+        "id": "3",
+        "title": "Teacher Training & Certification",
+        "description": "Workshops and nature retreats designed to recharge your body, mind, and soul while learning to integrate ancient wisdom with modern wellness practices.",
+        "icon": "🎓",
+        "iconBg": "bg-blue-200"
+      },
+      {
+        "id": "4",
+        "title": "Workshops & Retreats",
+        "description": "Comprehensive courses for those seeking to become certified yoga instructors, rooted in traditional principles adapted for modern needs.",
+        "icon": "🏕️",
+        "iconBg": "bg-blue-200"
+      }
+    ]
+  },
+  "whyUs": {
+    "title": "Why Holistic Yog?",
+    "description": "Our community-driven approach focuses on the complete well-being of body, mind, and spirit through yoga, meditation, and holistic wellness practices.",
+    "items": [
+      {
+        "id": "1",
+        "title": "Holistic Approach",
+        "description": "We don't just teach yoga poses, we focus on breathwork, mindfulness, nutrition, and emotional well-being.",
+        "icon": "✡️"
+      },
+      {
+        "id": "2",
+        "title": "Workshops & Events",
+        "description": "From city-wide workshops to community camps, we engage communities through regular events and learning programs.",
+        "icon": "🏛️"
+      },
+      {
+        "id": "3",
+        "title": "Certified & Trusted",
+        "description": "Our team is certified in Hatha, Vinyasa, and Pranayama and has trained over 500+ individuals across all age groups.",
+        "icon": "📋"
+      }
+    ],
+    "phoneNumber": "9723456789"
+  },
+  "courses": {
+    "title": "Explore Our Yoga Courses For Every Level",
+    "description": "At Holistic Yog, we offer courses for all levels. Whether you're a beginner or advanced, our sessions help you build strength, flexibility, and inner peace.",
+    "courses": [
+      {
+        "id": "1",
+        "title": "Beginner Yoga",
+        "description": "Easy yoga poses for a fresh start",
+        "imageSrc": "/images/pexels-olly-3775593.jpg",
+        "buttonText": "JOIN NOW"
+      },
+      {
+        "id": "2",
+        "title": "Vinyasa Yoga",
+        "description": "A dynamic class, linking breath to movement",
+        "imageSrc": "/images/pexels-olly-917732.jpg",
+        "buttonText": "JOIN NOW"
+      },
+      {
+        "id": "3",
+        "title": "Hatha Yoga",
+        "description": "A gentle class focusing on slow paced stretching",
+        "imageSrc": "/images/pexels-prasanthinturi-1051838.jpg",
+        "buttonText": "JOIN NOW"
+      },
+      {
+        "id": "4",
+        "title": "Power Yoga",
+        "description": "A gentle class focusing on slow paced stretching",
+        "imageSrc": "/images/pexels-kampus-6698513.jpg",
+        "buttonText": "JOIN NOW"
+      },
+      {
+        "id": "5",
+        "title": "Restorative Yoga",
+        "description": "Gentle poses to relax and rejuvenate",
+        "imageSrc": "/images/pexels-vlada-karpovich-4534689.jpg",
+        "buttonText": "JOIN NOW"
+      },
+      {
+        "id": "6",
+        "title": "Yin Yoga",
+        "description": "Deep stretching for improved flexibility",
+        "imageSrc": "/images/pexels-yankrukov-8436715.jpg",
+        "buttonText": "JOIN NOW"
+      }
+    ]
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "title": "Why Holistic Yog?",
+  "description": "Our community-driven approach focuses on the complete well-being of body, mind, and spirit through yoga, meditation, and holistic wellness practices.",
+  "items": [
+    {
+      "id": "1",
+      "title": "Holistic Approach",
+      "description": "We don't just teach yoga poses, we focus on breathwork, mindfulness, nutrition, and emotional well-being.",
+      "icon": "✡️"
+    },
+    {
+      "id": "2",
+      "title": "Workshops & Events",
+      "description": "From city-wide workshops to community camps, we engage communities through regular events and learning programs.",
+      "icon": "🏛️"
+    },
+    {
+      "id": "3",
+      "title": "Certified & Trusted",
+      "description": "Our team is certified in Hatha, Vinyasa, and Pranayama and has trained over 500+ individuals across all age groups.",
+      "icon": "📋"
+    }
+  ],
+  "phoneNumber": "9723456789"
+}

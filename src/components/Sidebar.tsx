@@ -36,7 +36,7 @@ const menuItems = [
 const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose, onMouseEnter, onMouseLeave }) => {
   return (
     <aside
-      className={`fixed top-16 left-0 z-20 h-[calc(100vh-4rem)] bg-[#353232] transition-all duration-300 ease-in-out ${
+      className={`fixed top-16 left-0 z-50 h-[calc(100vh-4rem)] bg-[#353232]/80 backdrop-blur-sm transition-all duration-300 ease-in-out ${
         isOpen ? 'w-64' : 'w-16'
       }`}
       onMouseEnter={onMouseEnter}
