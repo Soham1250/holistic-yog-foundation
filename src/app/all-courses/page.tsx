@@ -494,7 +494,7 @@ export default function AllCoursesPage() {
                 </div>
                 <div className="flex space-x-2 mt-2">
                   <button className="bg-orange-500 text-white text-xs font-medium py-1 px-3 rounded-full hover:bg-orange-600 transition-colors flex-1">
-                    Join Now
+                    
                   </button>
                   <button className="border border-gray-300 text-gray-700 text-xs font-medium py-1 px-3 rounded-full hover:bg-gray-50 transition-colors flex-1">
                     <Link href={`/course-info/${course.id}`} className="block w-full h-full">
