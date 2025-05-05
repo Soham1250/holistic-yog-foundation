@@ -37,18 +37,18 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose, onMouseEnter, onMous
   return (
     <aside
       className={`fixed top-16 left-0 z-50 h-[calc(100vh-4rem)] bg-[#353232]/80 backdrop-blur-sm transition-all duration-300 ease-in-out ${
-        isOpen ? 'w-64' : 'w-16'
+        isOpen ? 'w-64 px-2' : 'w-16 px-1'
       }`}
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
     >
-      <nav className="h-full flex flex-col">
-        <ul className="flex-1 space-y-0">
+      <nav className="h-full flex flex-col pt-2">
+        <ul className="flex-1 space-y-1">
           {menuItems.map((item) => (
             <li key={item.name}>
               <Link
                 href={item.href}
-                className="flex items-center px-4 py-3 text-white hover:bg-[#474343] transition-colors"
+                className="flex items-center px-5 py-3 text-white hover:bg-[#474343] transition-colors rounded-md"
               >
                 <div className="w-8 h-8 flex items-center justify-center">
                   <item.icon className="w-6 h-6" />

@@ -37,8 +37,8 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
         <Header onSidebarToggle={() => {}} />
         <div className="flex flex-1 overflow-hidden">
           <div className="w-16 h-full" />
-          <main className="flex-1 overflow-y-auto">
-            <div className="p-4 sm:p-6 lg:p-8">
+          <main className="flex-1 overflow-y-auto pl-5">
+            <div className="p-5 sm:p-6 lg:p-8">
               {children}
             </div>
           </main>
@@ -60,8 +60,8 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
           onMouseLeave={handleMouseLeave}
         />
         
-        <main className="flex-1 overflow-y-auto transition-all duration-300">
-          <div className="p-4 sm:p-6 lg:p-8">
+        <main className={`flex-1 overflow-y-auto transition-all duration-300 ${sidebarOpen ? 'pl-5 ml-2' : 'pl-5'}`}>
+          <div className="p-5 sm:p-6 lg:p-8">
             {children}
           </div>
           <Footer />

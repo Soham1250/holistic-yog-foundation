@@ -3,7 +3,7 @@
 import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { ArrowLeftIcon, StarIcon, ClockIcon, ChartBarIcon, UserGroupIcon, BookOpenIcon, CheckIcon } from '@heroicons/react/24/outline';
+import { ArrowLeftIcon, StarIcon, ClockIcon, ChartBarIcon, UserGroupIcon, BookOpenIcon, CheckIcon, SparklesIcon, QuestionMarkCircleIcon, ClipboardDocumentListIcon, ChevronRightIcon } from '@heroicons/react/24/outline';
 
 // Define course type
 interface CourseType {
@@ -166,106 +166,6 @@ export default function CourseInfoPage({ params }: { params: { id: string } }) {
       <div className="bg-white">
         <div className="container mx-auto px-4 py-8">
           <div className="flex flex-col md:flex-row gap-8">
-            {/* Left: Course image */}
-            <div className="md:w-1/3">
-              <div className="relative h-64 md:h-80 rounded-lg overflow-hidden">
-                <img 
-                  src={course.image} 
-                  alt={course.title}
-                  className="w-full h-full object-cover"
-                  width={600}
-                  height={400}
-                />
-              </div>
-            </div>
-            
-            {/* Right: Course details */}
-            <div className="md:w-2/3">
-              <div className="flex flex-wrap items-center gap-2 mb-2">
-                <span className="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded">
-                  {course.category}
-                </span>
-                <span className="bg-purple-100 text-purple-800 text-xs font-medium px-2.5 py-0.5 rounded">
-                  {course.level}
-                </span>
-              </div>
-              
-              <h1 className="text-3xl font-bold text-gray-900 mb-3">{course.title}</h1>
-              
-              <p className="text-gray-600 mb-4">{course.description}</p>
-              
-              <div className="flex items-center mb-4">
-                <div className="flex mr-2">
-                  {renderStars(course.rating)}
-                </div>
-                <span className="text-sm font-medium text-gray-900">{course.rating}</span>
-                <span className="text-sm text-gray-500 ml-1">({course.reviewCount.toLocaleString()} reviews)</span>
-              </div>
-              
-              <div className="flex items-center text-sm text-gray-600 mb-4">
-                <div className="flex items-center mr-4">
-                  <UserGroupIcon className="w-4 h-4 mr-1" />
-                  <span>{course.students?.toLocaleString()} students</span>
-                </div>
-                <div className="flex items-center mr-4">
-                  <ClockIcon className="w-4 h-4 mr-1" />
-                  <span>{course.duration}</span>
-                </div>
-                <div className="flex items-center">
-                  <BookOpenIcon className="w-4 h-4 mr-1" />
-                  <span>{course.lessons} lessons</span>
-                </div>
-              </div>
-              
-              <div className="flex items-center mb-6">
-                <span className="text-3xl font-bold text-gray-900">₹{course.price}</span>
-                <span className="text-lg text-gray-500 line-through ml-2">₹{course.originalPrice}</span>
-                <span className="ml-2 bg-green-100 text-green-800 text-xs font-medium px-2.5 py-0.5 rounded">
-                  {Math.round((1 - course.price / course.originalPrice) * 100)}% off
-                </span>
-              </div>
-              
-              <div className="flex flex-wrap gap-3">
-                <button className="bg-orange-500 hover:bg-orange-600 text-white font-medium py-2 px-6 rounded-full transition-colors">
-                  Enroll Now
-                </button>
-                <button className="border border-gray-300 text-gray-700 font-medium py-2 px-6 rounded-full hover:bg-gray-50 transition-colors">
-                  Add to Wishlist
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Course tabs */}
-      <div className="bg-white border-t border-b mt-6">
-        <div className="container mx-auto px-4">
-          <div className="flex overflow-x-auto hide-scrollbar">
-            <button 
-              className={`px-6 py-4 font-medium text-sm whitespace-nowrap border-b-2 ${activeTab === 'overview' ? 'border-blue-500 text-blue-600' : 'border-transparent text-gray-600 hover:text-gray-900'}`}
-              onClick={() => setActiveTab('overview')}
-            >
-              Overview
-            </button>
-            <button 
-              className={`px-6 py-4 font-medium text-sm whitespace-nowrap border-b-2 ${activeTab === 'curriculum' ? 'border-blue-500 text-blue-600' : 'border-transparent text-gray-600 hover:text-gray-900'}`}
-              onClick={() => setActiveTab('curriculum')}
-            >
-              Curriculum
-            </button>
-            <button 
-              className={`px-6 py-4 font-medium text-sm whitespace-nowrap border-b-2 ${activeTab === 'instructor' ? 'border-blue-500 text-blue-600' : 'border-transparent text-gray-600 hover:text-gray-900'}`}
-              onClick={() => setActiveTab('instructor')}
-            >
-              Instructor
-            </button>
-            <button 
-              className={`px-6 py-4 font-medium text-sm whitespace-nowrap border-b-2 ${activeTab === 'reviews' ? 'border-blue-500 text-blue-600' : 'border-transparent text-gray-600 hover:text-gray-900'}`}
-              onClick={() => setActiveTab('reviews')}
-            >
-              Reviews
-            </button>
           </div>
         </div>
       </div>
@@ -273,44 +173,200 @@ export default function CourseInfoPage({ params }: { params: { id: string } }) {
       {/* Tab content */}
       <div className="container mx-auto px-4 py-8">
         {activeTab === 'overview' && (
-          <div className="bg-white rounded-lg shadow p-6">
-            <h2 className="text-xl font-bold text-gray-900 mb-4">Course Overview</h2>
-            <p className="text-gray-700 mb-6">
-              {course.description}
-            </p>
-            
-            <h3 className="text-lg font-semibold text-gray-900 mb-3">What You'll Learn</h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-2 mb-6">
-              {course.features?.map((feature, index) => (
-                <div key={index} className="flex items-start">
-                  <CheckIcon className="w-5 h-5 text-green-500 mr-2 flex-shrink-0" />
-                  <span className="text-gray-700">{feature}</span>
+          <div className="space-y-0">
+            <div className="bg-white p-6 rounded-lg mb-6">
+              <h2 className="text-2xl font-bold text-gray-900 mb-1">Evening Relaxation</h2>
+              <div className="flex items-center mb-4">
+                <span className="text-sm text-gray-700 mr-2">Live Course |</span>
+                <div className="flex items-center">
+                  {[1, 2, 3, 4, 5].map((star) => (
+                    <svg 
+                      key={star} 
+                      className="w-4 h-4 text-yellow-400 fill-yellow-400" 
+                      viewBox="0 0 24 24"
+                    >
+                      <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                    </svg>
+                  ))}
+                  <span className="ml-1 text-sm text-gray-600">4.6 ratings</span>
                 </div>
-              ))}
+              </div>
+              
+              <div className="border border-gray-300 rounded-lg flex flex-col md:flex-row gap-6">
+                <div className="md:w-1/3">
+                  <div className="rounded-lg overflow-hidden">
+                    <Image 
+                      src="/images/pexels-vlada-karpovich-4534689.jpg" 
+                      alt="Evening Relaxation Course" 
+                      width={400} 
+                      height={300} 
+                      className="w-full h-auto object-cover"
+                    />
+                  </div>
+                </div>
+                <div className="md:w-2/3">
+                  <div className="text-xs text-gray-500 mb-1">
+                    <span className="inline-flex items-center">
+                      <svg className="w-4 h-4 mr-1 text-blue-500" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-5-9h10v2H7z"/>
+                      </svg>
+                      20k+ Users Interested
+                    </span>
+                  </div>
+                  
+                  <div>
+                    <h2 className="text-xl font-bold text-gray-900 mb-2">The Evening Relaxation</h2>
+                    <p className="text-gray-700">
+                      - Live course is crafted to help you unwind, de-stress, and recharge after a long day. This <strong>8-week guided program</strong> focuses on relaxation, flexibility, and mental clarity through mindful breathing and restorative poses, preparing you for a peaceful night's rest.
+                    </p>
+                  </div>
+                  
+                  <div className="flex items-center gap-4 text-xs text-gray-600 mt-6 mb-4">
+                    <div className="flex items-center bg-gray-100 px-2 py-1 rounded">
+                      <span>Intermediate & Advance</span>
+                    </div>
+                    <div className="flex items-center bg-gray-100 px-2 py-1 rounded">
+                      <ClockIcon className="w-3 h-3 mr-1" />
+                      <span>8 Weeks</span>
+                    </div>
+                    <div className="flex items-center bg-gray-100 px-2 py-1 rounded">
+                      <UserGroupIcon className="w-3 h-3 mr-1" />
+                      <span>20k+ Users Interested</span>
+                    </div>
+                  </div>
+                  
+                  <button className="bg-orange-500 hover:bg-orange-600 text-white font-medium py-2 px-6 rounded-full text-sm transition-colors">
+                    Sign Up Now
+                  </button>
+                </div>
+              </div>
             </div>
             
-            <h3 className="text-lg font-semibold text-gray-900 mb-3">Course Details</h3>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
-              <div className="bg-blue-50 rounded-lg p-4">
-                <div className="flex items-center mb-2">
-                  <ClockIcon className="w-5 h-5 text-blue-500 mr-2" />
-                  <h4 className="font-medium text-gray-900">Duration</h4>
+            <div className="bg-[#FFF3E2] p-8 rounded-lg mb-6">
+              <h2 className="text-2xl font-bold text-gray-900 mb-4">
+                <span className="inline-flex items-center">
+                  <BookOpenIcon className="w-5 h-5 mr-2 text-orange-500" />
+                  Course Overview
+                </span>
+              </h2>
+              
+              <div className="flex flex-col md:flex-row gap-8">
+                <div className="md:w-1/2">
+                  <h3 className="text-lg font-semibold text-gray-800 mb-3">Evening Relaxation Course - Overview</h3>
+                  <p className="text-gray-700 mb-4">
+                    This course is designed to provide a soothing end to your day through calming yoga practices. You'll explore gentle stretches, deep breathing techniques, and restorative poses aimed at releasing stress and promoting better sleep quality.
+                  </p>
+                  <p className="text-gray-700">
+                    Whether you're a beginner or looking to build a consistent evening routine, this program helps improve sleep quality, flexibility, and overall well-being - all in just a few minutes each evening.
+                  </p>
                 </div>
-                <p className="text-gray-700">{course.duration}</p>
+                <div className="md:w-1/2">
+                  <div className="rounded-lg overflow-hidden">
+                    <Image 
+                      src="/images/pexels-prasanthinturi-1051838.jpg" 
+                      alt="Evening Relaxation Practice" 
+                      width={500} 
+                      height={300} 
+                      className="w-full h-auto object-cover rounded-lg"
+                    />
+                  </div>
+                </div>
               </div>
-              <div className="bg-blue-50 rounded-lg p-4">
-                <div className="flex items-center mb-2">
-                  <ChartBarIcon className="w-5 h-5 text-blue-500 mr-2" />
-                  <h4 className="font-medium text-gray-900">Level</h4>
+            </div>
+            
+            {/* What Sets Us Apart Section - Matches Screenshot 1 */}
+            <div className="py-8">
+              <h2 className="text-2xl font-bold text-gray-900 text-center mb-8">
+                <span className="inline-flex items-center justify-center w-full">
+                  <SparklesIcon className="w-5 h-5 mr-2 text-orange-500" />
+                  What Sets Us Apart
+                </span>
+              </h2>
+              
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div className="bg-[#d3ebff] rounded-lg p-6 text-center">
+                  <div className="flex justify-center mb-3">
+                    <svg className="w-8 h-8 text-orange-500" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-5-9h10v2H7z"/>
+                    </svg>
+                  </div>
+                  <h3 className="font-semibold text-gray-800 text-sm">Certified and<br />Experienced Instructors</h3>
                 </div>
-                <p className="text-gray-700">{course.level}</p>
+                
+                <div className="bg-[#d3ebff] rounded-lg p-6 text-center">
+                  <div className="flex justify-center mb-3">
+                    <svg className="w-8 h-8 text-orange-500" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
+                    </svg>
+                  </div>
+                  <h3 className="font-semibold text-gray-800 text-sm">Personalized Attention</h3>
+                </div>
+                
+                <div className="bg-[#d3ebff] rounded-lg p-6 text-center">
+                  <div className="flex justify-center mb-3">
+                    <svg className="w-8 h-8 text-orange-500" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                    </svg>
+                  </div>
+                  <h3 className="font-semibold text-gray-800 text-sm">Holistic Wellness Approach</h3>
+                </div>
               </div>
-              <div className="bg-blue-50 rounded-lg p-4">
-                <div className="flex items-center mb-2">
-                  <BookOpenIcon className="w-5 h-5 text-blue-500 mr-2" />
-                  <h4 className="font-medium text-gray-900">Lessons</h4>
-                </div>
-                <p className="text-gray-700">{course.lessons} lessons</p>
+            </div>
+            
+            {/* FAQ Section - Matches Screenshot 1 */}
+            <div className="py-8 bg-[#FFF3E2] rounded-lg">
+              <h2 className="text-2xl font-bold text-gray-900 text-center mb-8">
+                <span className="inline-flex items-center justify-center w-full">
+                  <QuestionMarkCircleIcon className="w-5 h-5 mr-2 text-orange-500" />
+                  Frequently Asked Questions
+                </span>
+              </h2>
+              
+              <div className="rounded-lg space-y-4 max-w-3xl mx-auto px-4">
+                {[
+                  {
+                    question: "What type of yoga classes do you offer?",
+                    answer: "We offer a variety of yoga classes including Hatha, Vinyasa, Restorative, Yin, and specialized classes for seniors and beginners. Each class is designed to meet different needs and experience levels."
+                  },
+                  {
+                    question: "Do I need any prior experience to join?",
+                    answer: "No prior experience is needed for our beginner classes. We welcome practitioners of all levels and provide modifications for each pose to accommodate your experience and physical capabilities."
+                  },
+                  {
+                    question: "What do I need to bring to the class?",
+                    answer: "We recommend bringing your own yoga mat, comfortable clothing, and a water bottle. For some classes, props like blocks and straps might be helpful, but we provide these if you don't have your own.",
+                  },
+                  {
+                    question: "Are the classes available online or in person?",
+                    answer: "We offer both in-person classes at our studio and online live-streamed sessions. We also have a library of recorded classes that you can access anytime with our membership."
+                  },
+                  {
+                    question: "Is there a trial class available?",
+                    answer: "Yes, we offer a free trial class for new students. This gives you an opportunity to experience our teaching style and facility before committing to a membership or class package."
+                  }
+                ].map((faq, index) => (
+                  <div 
+                    key={index} 
+                    className={`bg-white rounded-lg overflow-hidden shadow-lg`}
+                  >
+                    <details className="group">
+                      <summary className="flex items-center justify-between p-4 cursor-pointer">
+                        <h3 className="font-medium text-gray-800 flex items-center">
+                          <ChevronRightIcon className="w-4 h-4 mr-2 text-orange-500" />
+                          {faq.question}
+                        </h3>
+                        <span className="text-gray-400 group-open:rotate-180 transition-transform">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                          </svg>
+                        </span>
+                      </summary>
+                      <div className="p-4 pt-0">
+                        <p className="text-gray-700">{faq.answer}</p>
+                      </div>
+                    </details>
+                  </div>
+                ))}
               </div>
             </div>
           </div>
