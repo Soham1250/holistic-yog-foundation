@@ -213,7 +213,7 @@ export default function ConferencesPage() {
                       <span className="text-gray-600">{event.speakerTitle}</span>
                     </div>
                   </div>
-                ))}
+                ))} 
               </div>
             ))}
           </div>
