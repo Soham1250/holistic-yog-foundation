@@ -42,12 +42,14 @@ const Header: React.FC<HeaderProps> = ({ onSidebarToggle }) => {
           
           {/* Sign In Button */}
           <div className="flex justify-end pr-4 w-24">
-            <button
-              className="bg-[#E05E0E] text-white font-semibold px-6 py-2 rounded-full shadow hover:bg-[#f5a366] focus:outline-none focus:ring-2 focus:ring-orange-400 transition-colors text-sm whitespace-nowrap"
-              aria-label="Sign in"
-            >
-              Sign In
-            </button>
+            <Link href="/login">
+              <button
+                className="bg-[#E05E0E] text-white font-semibold px-6 py-2 rounded-full shadow hover:bg-[#f5a366] focus:outline-none focus:ring-2 focus:ring-orange-400 transition-colors text-sm whitespace-nowrap"
+                aria-label="Sign in"
+              >
+                Sign In
+              </button>
+            </Link>
           </div>
         </div>
       </div>

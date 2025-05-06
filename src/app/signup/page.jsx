@@ -571,7 +571,7 @@ export default function SignupPage() {
                 Attached your Profile photo<span className="text-red-500">*</span>
               </label>
               <div className="flex items-center">
-                <label className="bg-white px-4 py-2 rounded-l-full border border-gray-300 cursor-pointer hover:bg-gray-50">
+                <label className="text-black bg-white px-4 py-2 rounded-l-full border border-gray-300 cursor-pointer hover:bg-gray-50">
                   Choose File
                   <input
                     type="file"
@@ -581,7 +581,7 @@ export default function SignupPage() {
                     accept="image/*"
                   />
                 </label>
-                <span className="px-4 py-2 rounded-r-full border border-l-0 border-gray-300 bg-gray-50 flex-grow">
+                <span className="text-gray-400 px-4 py-2 rounded-r-full border border-l-0 border-gray-300 bg-gray-50 flex-grow">
                   {formData.profilePhoto ? formData.profilePhoto.name : 'No file chosen'}
                 </span>
               </div>
@@ -593,7 +593,7 @@ export default function SignupPage() {
                 Attached your resume<span className="text-red-500">*</span>
               </label>
               <div className="flex items-center">
-                <label className="bg-white px-4 py-2 rounded-l-full border border-gray-300 cursor-pointer hover:bg-gray-50">
+                <label className="text-black bg-white px-4 py-2 rounded-l-full border border-gray-300 cursor-pointer hover:bg-gray-50">
                   Choose File
                   <input
                     type="file"
@@ -603,7 +603,7 @@ export default function SignupPage() {
                     accept=".pdf,.doc,.docx"
                   />
                 </label>
-                <span className="px-4 py-2 rounded-r-full border border-l-0 border-gray-300 bg-gray-50 flex-grow">
+                <span className="text-gray-400 px-4 py-2 rounded-r-full border border-l-0 border-gray-300 bg-gray-50 flex-grow">
                   {formData.resume ? formData.resume.name : 'No file chosen'}
                 </span>
               </div>
@@ -623,7 +623,7 @@ export default function SignupPage() {
                 onChange={handleChange}
                 placeholder="Enter your description"
                 rows="5"
-                className="text-black w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-orange-500"
+                className="bg-white text-black w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-orange-500"
               ></textarea>
             </div>
             
@@ -637,7 +637,7 @@ export default function SignupPage() {
                 onChange={handleChange}
                 placeholder="Enter your message"
                 rows="5"
-                className="text-black w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-orange-500"
+                className="bg-white text-black w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-orange-500"
               ></textarea>
             </div>
           </div>
