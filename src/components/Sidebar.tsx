@@ -4,14 +4,11 @@ import React from 'react';
 import Link from 'next/link';
 import { 
   HomeIcon, 
-  BookOpenIcon, 
+  AcademicCapIcon, 
   UserGroupIcon, 
-  IdentificationIcon, 
-  PhotoIcon, 
-  DocumentTextIcon, 
   CalendarIcon, 
   UserIcon, 
-  StarIcon 
+  InformationCircleIcon 
 } from '@heroicons/react/24/outline';
 
 interface SidebarProps {
@@ -22,15 +19,12 @@ interface SidebarProps {
 }
 
 const menuItems = [
-  { name: 'HOME', icon: HomeIcon, href: '/' },
-  { name: 'COURSES', icon: BookOpenIcon, href: '/courses' },
-  { name: 'PROGRAMS', icon: UserGroupIcon, href: '/programs' },
-  { name: 'MEMBERSHIP', icon: IdentificationIcon, href: '/membership' },
-  { name: 'GALLERY', icon: PhotoIcon, href: '/gallery' },
-  { name: 'ARTICLES', icon: DocumentTextIcon, href: '/articles' },
-  { name: 'WORKSHOP', icon: CalendarIcon, href: '/workshop' },
-  { name: 'CONFERENCES', icon: UserIcon, href: '/conferences' },
-  { name: 'COMPETITIONS', icon: StarIcon, href: '/competitions' },
+  { name: 'Home', href: '/', icon: HomeIcon },
+  { name: 'All Courses', href: '/all-courses', icon: AcademicCapIcon },
+  { name: 'Membership', href: '/membership', icon: UserGroupIcon },
+  { name: 'Conferences', href: '/conferences', icon: CalendarIcon },
+  { name: 'Members', href: '/members', icon: UserIcon },
+  { name: 'About Us', href: '/about', icon: InformationCircleIcon },
 ];
 
 const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose, onMouseEnter, onMouseLeave }) => {
