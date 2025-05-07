@@ -1,14 +1,7 @@
 "use client";
 
 import React from 'react';
-import ComingSoonButton from '../ui/ComingSoonButton';
-
-interface HeadingSectionProps {
-  title?: string;
-  subtitle?: string;
-}
-
-const HeadingSection: React.FC<HeadingSectionProps> = ({ 
+const HeadingSection = ({ 
   title = "Yoga Education for an Enlightened Future",
   subtitle = "Empowering seniors & communities through yoga. Blending tradition and wellness to foster strength, balance, and peace for every stage of life."
 }) => {
@@ -25,7 +18,6 @@ const HeadingSection: React.FC<HeadingSectionProps> = ({
       
       <div className="mt-4">
         <div className="flex gap-3 mb-4">
-          <ComingSoonButton text="JOIN US" />
           <button className="bg-white hover:bg-gray-100 text-gray-800 font-medium py-2 px-6 rounded-full border border-gray-300 transition-colors">
             VIEW DETAILS
           </button>

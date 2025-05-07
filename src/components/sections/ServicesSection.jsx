@@ -2,21 +2,8 @@
 
 import React from 'react';
 
-interface ServiceItem {
-  id: string;
-  title: string;
-  description: string;
-  icon?: string;
-  iconBg?: string;
-}
-
-interface ServicesSectionProps {
-  title?: string;
-  description?: string;
-  services?: ServiceItem[];
-}
-
-const defaultServices: ServiceItem[] = [
+// Default services data
+const defaultServices = [
   {
     id: '1',
     title: 'Yoga for Seniors',
@@ -47,7 +34,7 @@ const defaultServices: ServiceItem[] = [
   }
 ];
 
-const ServicesSection: React.FC<ServicesSectionProps> = ({
+const ServicesSection = ({
   title = "Achieve More With Our Services",
   description = "At Holistic Yog Foundation, we offer a comprehensive range of carefully designed services designed to support every stage of life with the healing, empowering, and transformative power of yoga.",
   services = defaultServices

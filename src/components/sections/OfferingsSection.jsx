@@ -2,21 +2,7 @@
 
 import React from 'react';
 
-interface OfferingItem {
-  id: string;
-  title: string;
-  description: string;
-  imageSrc?: string;
-  buttonText?: string;
-}
-
-interface OfferingsSectionProps {
-  title?: string;
-  description?: string;
-  offerings?: OfferingItem[];
-}
-
-const defaultOfferings: OfferingItem[] = [
+const defaultOfferings = [
   {
     id: '1',
     title: 'Beginner Yoga',
@@ -47,7 +33,7 @@ const defaultOfferings: OfferingItem[] = [
   }
 ];
 
-const OfferingsSection: React.FC<OfferingsSectionProps> = ({
+const OfferingsSection = ({
   title = "Explore Our Offerings",
   description = "Discover our range of yoga classes and programs designed for all levels and needs",
   offerings = defaultOfferings

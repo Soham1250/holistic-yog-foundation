@@ -1,4 +1,3 @@
-import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Layout from '../components/Layout';
@@ -14,15 +13,13 @@ const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
 });
 
-export const metadata: Metadata = {
+export const metadata = {
   title: "Holistic Yog Foundation",
   description: "Discover the path to holistic wellness through yoga",
 };
 
 export default function RootLayout({
   children,
-}: {
-  children: React.ReactNode
 }) {
   return (
     <html lang="en" className={`${geist.variable} ${geistMono.variable}`}>

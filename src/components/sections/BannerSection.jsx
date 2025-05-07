@@ -1,7 +1,7 @@
 "use client";
 
 import React from 'react';
-import ComingSoonButton from '../ui/ComingSoonButton';
+import Link from 'next/link';
 import { 
   CalendarIcon, 
   ClockIcon, 
@@ -11,22 +11,8 @@ import {
   ArrowRightIcon
 } from '@heroicons/react/24/outline';
 
-interface EventDetails {
-  title: string;
-  description: string;
-  date: string;
-  time: string;
-  venue: string;
-}
-
-interface BannerSectionProps {
-  title?: string;
-  subtitle?: string;
-  event?: EventDetails;
-  buttonText?: string;
-}
-
-const defaultEvent: EventDetails = {
+// Default event data
+const defaultEvent = {
   title: "Ayurveda & Mindfulness Conference",
   description: "Dive into traditional healing practices and their integration into modern lifestyle therapies.",
   date: "July 8, 2025",
@@ -34,7 +20,7 @@ const defaultEvent: EventDetails = {
   venue: "Matunga Mumbai, India"
 };
 
-const BannerSection: React.FC<BannerSectionProps> = ({
+const BannerSection = ({
   title = "Upcoming",
   subtitle = "Stay informed. Stay connected. Be a part of our next big gathering.",
   event = defaultEvent,
@@ -99,11 +85,15 @@ const BannerSection: React.FC<BannerSectionProps> = ({
                 <MapPinIcon className="w-5 h-5 text-blue-500 mr-3" />
                 <p className="text-gray-700">Venue: <span className="font-medium">{event.venue}</span></p>
               </div>
-            </div>
-            
-            <div className="mt-6">
-              <ComingSoonButton text={buttonText} />
-            </div>
+              
+              <div className="mt-6">
+                <Link href="/conferences">
+                  <button className="bg-orange-500 hover:bg-orange-600 text-white font-medium py-2 px-6 rounded-full transition-colors">
+                    Register Now
+                  </button>
+                </Link>
+              </div>
+            </div>            
           </div>
         </div>
       </div>

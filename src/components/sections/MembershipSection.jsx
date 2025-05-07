@@ -1,25 +1,10 @@
 "use client";
 
 import React from 'react';
-import ComingSoonButton from '../ui/ComingSoonButton';
 import { CreditCardIcon } from '@heroicons/react/24/outline';
 
-interface MembershipPlan {
-  id: string;
-  title: string;
-  price: number;
-  duration: string;
-  features: string[];
-  isPopular?: boolean;
-}
-
-interface MembershipSectionProps {
-  title?: string;
-  description?: string;
-  plan?: MembershipPlan;
-}
-
-const defaultPlan: MembershipPlan = {
+// Default plan data
+const defaultPlan = {
   id: '1',
   title: 'Annual Membership',
   price: 799,
@@ -33,7 +18,7 @@ const defaultPlan: MembershipPlan = {
   isPopular: true
 };
 
-const MembershipSection: React.FC<MembershipSectionProps> = ({
+const MembershipSection = ({
   title = "Membership",
   description = "Join our community and transform your life with our holistic approach to wellness.",
   plan = defaultPlan
@@ -61,7 +46,7 @@ const MembershipSection: React.FC<MembershipSectionProps> = ({
                 width="600"
                 height="400"
                 onError={(e) => {
-                  const target = e.target as HTMLImageElement;
+                  const target = e.target;
                   target.onerror = null;
                   target.src = 'data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22100%25%22%20height%3D%22100%25%22%20viewBox%3D%220%200%20800%20600%22%3E%3Crect%20fill%3D%22%23f0f0f0%22%20width%3D%22800%22%20height%3D%22600%22%2F%3E%3Ctext%20fill%3D%22%23999%22%20font-family%3D%22Arial%2C%20sans-serif%22%20font-size%3D%2236%22%20x%3D%22400%22%20y%3D%22300%22%20text-anchor%3D%22middle%22%20dominant-baseline%3D%22middle%22%3EYoga%20Class%20Image%3C%2Ftext%3E%3C%2Fsvg%3E';
                 }}
@@ -86,10 +71,6 @@ const MembershipSection: React.FC<MembershipSectionProps> = ({
                   </li>
                 ))}
               </ul>
-              
-              <div className="flex justify-center mt-8">
-                <ComingSoonButton text="JOIN NOW" />
-              </div>
             </div>
           </div>
         </div>

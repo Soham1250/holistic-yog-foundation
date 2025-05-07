@@ -1,7 +1,6 @@
 "use client";
 
 import React from 'react';
-import ComingSoonButton from '../ui/ComingSoonButton';
 import { 
   SparklesIcon, 
   CalendarIcon, 
@@ -9,22 +8,8 @@ import {
   PhoneIcon
 } from '@heroicons/react/24/outline';
 
-interface WhyUsItem {
-  id: string;
-  title: string;
-  description: string;
-  icon?: string;
-  iconBg?: string;
-}
-
-interface WhyUsSectionProps {
-  title?: string;
-  description?: string;
-  items?: WhyUsItem[];
-  phoneNumber?: string;
-}
-
-const defaultItems: WhyUsItem[] = [
+// Default items data
+const defaultItems = [
   {
     id: '1',
     title: 'Holistic Approach',
@@ -45,7 +30,7 @@ const defaultItems: WhyUsItem[] = [
   }
 ];
 
-const WhyUsSection: React.FC<WhyUsSectionProps> = ({
+const WhyUsSection = ({
   title = "Why Holistic Yog?",
   description = "Our community-driven approach focuses on the complete well-being of body, mind, and spirit through yoga, meditation, and holistic wellness practices.",
   items = defaultItems,
@@ -68,7 +53,7 @@ const WhyUsSection: React.FC<WhyUsSectionProps> = ({
                 width="600"
                 height="400"
                 onError={(e) => {
-                  const target = e.target as HTMLImageElement;
+                  const target = e.target;
                   target.onerror = null;
                   target.src = 'data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22100%25%22%20height%3D%22100%25%22%20viewBox%3D%220%200%20800%20600%22%3E%3Crect%20fill%3D%22%23f0f0f0%22%20width%3D%22800%22%20height%3D%22600%22%2F%3E%3Ctext%20fill%3D%22%23999%22%20font-family%3D%22Arial%2C%20sans-serif%22%20font-size%3D%2236%22%20x%3D%22400%22%20y%3D%22300%22%20text-anchor%3D%22middle%22%20dominant-baseline%3D%22middle%22%3EYoga%20Class%20Image%3C%2Ftext%3E%3C%2Fsvg%3E';
                 }}
@@ -77,7 +62,6 @@ const WhyUsSection: React.FC<WhyUsSectionProps> = ({
           </div>
           
           <div className="mt-6 flex space-x-4">
-            <ComingSoonButton text="JOIN NOW" />
             <a href={`tel:${phoneNumber}`} className="flex items-center border border-gray-300 rounded-full px-4 py-2 text-gray-700 hover:bg-gray-100 transition-colors">
               <PhoneIcon className="w-4 h-4 mr-2 text-blue-500" />
               {phoneNumber}

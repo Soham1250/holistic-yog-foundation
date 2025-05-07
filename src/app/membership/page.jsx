@@ -95,7 +95,7 @@ export default function MembershipPage() {
             </Link>
           </div>
 
-          {/* Yoga Volunteer */}
+          {/* Annual Membership */}
           <div className="relative">
             <div
               className="w-[350px] h-[365px] rounded-tl-[200px] rounded-tr-[200px] overflow-hidden mx-auto"
@@ -104,15 +104,15 @@ export default function MembershipPage() {
               }}
             >
               <div className="pt-16 pb-8 px-6 text-center">
-                <h3 className="text-xl font-bold text-black mb-4">Yoga Volunteer</h3>
+                <h3 className="text-xl font-bold text-black mb-4">Annual Membership</h3>
                 <ul className="text-left space-y-3 mb-6">
                   <li className="flex items-start">
                     <span className="text-black mr-2">•</span>
-                    <span className="text-black pointer-events-none">A YVM member is entitled to a free copy of e-newsletter regularly.</span>
+                    <span className="text-black pointer-events-none">Unlimited access to all yoga classes and workshops.</span>
                   </li>
                   <li className="flex items-start">
                     <span className="text-black mr-2">•</span>
-                    <span className="text-black pointer-events-none">YVM can join the FREE Online Platform, an interaction with the Gurus and Acharyas.</span>
+                    <span className="text-black pointer-events-none">Priority registration for special events and retreats.</span>
                   </li>
                 </ul>
               </div>
@@ -124,7 +124,7 @@ export default function MembershipPage() {
             </Link>
           </div>
 
-          {/* Yoga Professional */}
+          {/* Monthly Membership */}
           <div className="relative">
             <div
               className="w-[350px] h-[365px] rounded-tl-[200px] rounded-tr-[200px] overflow-hidden mx-auto"
@@ -133,15 +133,15 @@ export default function MembershipPage() {
               }}
             >
               <div className="pt-16 pb-8 px-6 text-center">
-                <h3 className="text-xl font-bold text-black mb-4">Yoga Professional</h3>
+                <h3 className="text-xl font-bold text-black mb-4">Monthly Membership</h3>
                 <ul className="text-left space-y-3 mb-6">
                   <li className="flex items-start">
                     <span className="text-black mr-2">•</span>
-                    <span className="text-black pointer-events-none">A YPM is entitled to a free copy of e-newsletter every month.</span>
+                    <span className="text-black pointer-events-none">Access to all regular yoga classes.</span>
                   </li>
                   <li className="flex items-start">
                     <span className="text-black mr-2">•</span>
-                    <span className="text-black pointer-events-none">A YPM will be eligible for discounts on publications of the member institutions as per agreement.</span>
+                    <span className="text-black pointer-events-none">Discounts on workshops and merchandise.</span>
                   </li>
                 </ul>
               </div>

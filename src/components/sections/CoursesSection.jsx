@@ -9,21 +9,8 @@ import {
 } from '@heroicons/react/24/outline';
 import Link from 'next/link';
 
-interface CourseItem {
-  id: string;
-  title: string;
-  description: string;
-  imageSrc?: string;
-  buttonText?: string;
-}
-
-interface CoursesSectionProps {
-  title?: string;
-  description?: string;
-  courses?: CourseItem[];
-}
-
-const defaultCourses: CourseItem[] = [
+// Default courses data
+const defaultCourses = [
   {
     id: '1',
     title: 'Beginner Yoga',
@@ -68,15 +55,15 @@ const defaultCourses: CourseItem[] = [
   }
 ];
 
-const CoursesSection: React.FC<CoursesSectionProps> = ({
+const CoursesSection = ({
   title = "Explore Our Yoga Courses For Every Level",
   description = "At Holistic Yog, we offer courses for all levels. Whether you're a beginner or advanced, our sessions help you build strength, flexibility, and inner peace.",
   courses = defaultCourses
 }) => {
-  const scrollContainerRef = useRef<HTMLDivElement>(null);
+  const scrollContainerRef = useRef(null);
   
   // Handle mouse drag scrolling
-  const handleMouseDown = (e: React.MouseEvent) => {
+  const handleMouseDown = (e) => {
     if (!scrollContainerRef.current) return;
     
     const slider = scrollContainerRef.current;
@@ -84,7 +71,7 @@ const CoursesSection: React.FC<CoursesSectionProps> = ({
     let startX = e.pageX - slider.offsetLeft;
     let scrollLeft = slider.scrollLeft;
     
-    const handleMouseMove = (e: MouseEvent) => {
+    const handleMouseMove = (e) => {
       if (!isDown) return;
       e.preventDefault();
       const x = e.pageX - slider.offsetLeft;

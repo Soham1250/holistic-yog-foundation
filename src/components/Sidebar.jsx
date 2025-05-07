@@ -7,27 +7,26 @@ import {
   AcademicCapIcon, 
   UserGroupIcon, 
   CalendarIcon, 
-  UserIcon, 
-  InformationCircleIcon 
+  PhotoIcon, 
+  DocumentTextIcon, 
+  BeakerIcon, 
+  UserCircleIcon, 
+  TrophyIcon 
 } from '@heroicons/react/24/outline';
-
-interface SidebarProps {
-  isOpen: boolean;
-  onClose: () => void;
-  onMouseEnter: () => void;
-  onMouseLeave: () => void;
-}
 
 const menuItems = [
   { name: 'Home', href: '/', icon: HomeIcon },
-  { name: 'All Courses', href: '/all-courses', icon: AcademicCapIcon },
-  { name: 'Membership', href: '/membership', icon: UserGroupIcon },
-  { name: 'Conferences', href: '/conferences', icon: CalendarIcon },
-  { name: 'Members', href: '/members', icon: UserIcon },
-  { name: 'About Us', href: '/about', icon: InformationCircleIcon },
+  { name: 'Courses', href: '/courses', icon: AcademicCapIcon },
+  { name: 'Programs', href: '/', icon: UserGroupIcon },
+  { name: 'Membership', href: '/membership', icon: CalendarIcon },
+  { name: 'Gallery', href: '/', icon: PhotoIcon },
+  { name: 'Articles', href: '/articles', icon: DocumentTextIcon },
+  { name: 'Workshops', href: '/', icon: BeakerIcon },
+  { name: 'Conferences', href: '/conferences', icon: UserCircleIcon },
+  { name: 'Competitions', href: '/', icon: TrophyIcon },
 ];
 
-const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose, onMouseEnter, onMouseLeave }) => {
+const Sidebar = ({ isOpen, onClose, onMouseEnter, onMouseLeave }) => {
   return (
     <aside
       className={`fixed top-16 left-0 z-50 h-[calc(100vh-4rem)] bg-[#353232]/80 backdrop-blur-sm transition-all duration-300 ease-in-out ${

@@ -10,13 +10,13 @@ export default function LoginPage() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
-  const [errors, setErrors] = useState<{email?: string; password?: string}>({});
+  const [errors, setErrors] = useState({});
   const [isLoading, setIsLoading] = useState(false);
   
   const router = useRouter();
 
   const validateForm = () => {
-    const newErrors: {email?: string; password?: string} = {};
+    const newErrors = {};
     
     if (!email) {
       newErrors.email = 'Email is required';
@@ -32,7 +32,7 @@ export default function LoginPage() {
     return Object.keys(newErrors).length === 0;
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     
     if (!validateForm()) {

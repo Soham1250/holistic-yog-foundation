@@ -1,17 +1,9 @@
 "use client";
 
 import React from 'react';
-import ComingSoonButton from '../ui/ComingSoonButton';
 import { SparklesIcon } from '@heroicons/react/24/outline';
 
-interface AboutUsSectionProps {
-  title?: string;
-  description?: string;
-  mission?: string;
-  vision?: string;
-}
-
-const AboutUsSection: React.FC<AboutUsSectionProps> = ({
+const AboutUsSection = ({
   title = "About us",
   description = "At Holistic Yog Foundation, we are a community-driven nonprofit dedicated to spreading the transformative power of yoga and mindfulness. Our mission is to empower individuals of all ages through the ancient wisdom of yoga blended with modern wellness practices.",
   vision = "To create a world where yoga education becomes a pillar of lifelong wellness, nurturing physical strength, emotional awareness, and inner peace for all generations.",
@@ -45,7 +37,6 @@ const AboutUsSection: React.FC<AboutUsSectionProps> = ({
               <SparklesIcon className="w-6 h-6 text-blue-500 mr-2" />
               {title}
             </h2>
-            <ComingSoonButton text="JOIN US" />
           </div>
           
           <p className="text-gray-700 mb-6">

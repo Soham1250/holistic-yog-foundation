@@ -3,19 +3,7 @@
 import React from 'react';
 import Image from 'next/image';
 
-interface ImageData {
-  id: string;
-  src: string;
-  alt: string;
-  width: number;
-  height: number;
-}
-
-interface ImagesSectionProps {
-  images?: ImageData[];
-}
-
-const defaultImages: ImageData[] = [
+const defaultImages = [
   {
     id: '1',
     src: '/images/pexels-shu-lei-2809836-13849063.jpg',
@@ -32,7 +20,7 @@ const defaultImages: ImageData[] = [
   }
 ];
 
-const ImagesSection: React.FC<ImagesSectionProps> = ({
+const ImagesSection = ({
   images = defaultImages
 }) => {
   return (

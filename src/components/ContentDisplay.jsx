@@ -11,15 +11,21 @@ import InstructorsSection from './sections/InstructorsSection';
 import WhyUsSection from './sections/WhyUsSection';
 import MembershipSection from './sections/MembershipSection';
 
-export type SectionType = 'home' | 'about' | 'services' | 'courses' | 'instructors' | 'why-us' | 'membership' | 'banner';
+// Define section types as string constants
+export const SECTION_TYPES = {
+  HOME: 'home',
+  ABOUT: 'about',
+  SERVICES: 'services',
+  COURSES: 'courses',
+  INSTRUCTORS: 'instructors',
+  WHY_US: 'why-us',
+  MEMBERSHIP: 'membership',
+  BANNER: 'banner'
+};
 
-interface ContentDisplayProps {
-  activeSection?: SectionType;
-}
-
-const ContentDisplay: React.FC<ContentDisplayProps> = ({ activeSection = 'home' }) => {
+const ContentDisplay = ({ activeSection = 'home' }) => {
   // Function to determine if a section should be visible
-  const isSectionVisible = (section: SectionType): boolean => {
+  const isSectionVisible = (section) => {
     // Home page shows all sections
     if (activeSection === 'home') {
       return true;

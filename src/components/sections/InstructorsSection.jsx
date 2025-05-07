@@ -10,26 +10,8 @@ import {
   ArrowRightIcon
 } from '@heroicons/react/24/outline';
 
-interface InstructorQualification {
-  title: string;
-  description: string;
-}
-
-interface Instructor {
-  id: string;
-  name: string;
-  specialty?: string;
-  bio?: string;
-  qualifications: InstructorQualification[];
-}
-
-interface InstructorsSectionProps {
-  title?: string;
-  subtitle?: string;
-  instructors?: Instructor[];
-}
-
-const defaultQualifications: InstructorQualification[] = [
+// Default qualification data
+const defaultQualifications = [
   {
     title: "Trained 500+ members",
     description: "Successfully trained over 500 individuals, helping them transform their lifestyle through personalized yoga sessions."
@@ -48,7 +30,8 @@ const defaultQualifications: InstructorQualification[] = [
   }
 ];
 
-const defaultInstructors: Instructor[] = [
+// Default instructors data
+const defaultInstructors = [
   {
     id: '1',
     name: 'Sophia Bennett',
@@ -99,16 +82,16 @@ const defaultInstructors: Instructor[] = [
   }
 ];
 
-const InstructorsSection: React.FC<InstructorsSectionProps> = ({
+const InstructorsSection = ({
   title = "Connect and Grow With Top Instructor",
   subtitle = "Join our sessions led by experienced instructors and take your yoga practice to the next level with guidance, community, and inspiration.",
   instructors = defaultInstructors
 }) => {
-  const scrollContainerRef = useRef<HTMLDivElement>(null);
-  const [activeInstructor, setActiveInstructor] = useState<Instructor>(instructors[0]);
+  const scrollContainerRef = useRef(null);
+  const [activeInstructor, setActiveInstructor] = useState(instructors[0]);
   
   // Handle mouse drag scrolling
-  const handleMouseDown = (e: React.MouseEvent) => {
+  const handleMouseDown = (e) => {
     if (!scrollContainerRef.current) return;
     
     const slider = scrollContainerRef.current;
@@ -116,7 +99,7 @@ const InstructorsSection: React.FC<InstructorsSectionProps> = ({
     let startX = e.pageX - slider.offsetLeft;
     let scrollLeft = slider.scrollLeft;
     
-    const handleMouseMove = (e: MouseEvent) => {
+    const handleMouseMove = (e) => {
       if (!isDown) return;
       e.preventDefault();
       const x = e.pageX - slider.offsetLeft;

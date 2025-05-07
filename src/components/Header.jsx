@@ -5,11 +5,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { Bars3Icon } from '@heroicons/react/24/outline';
 
-interface HeaderProps {
-  onSidebarToggle: () => void;
-}
-
-const Header: React.FC<HeaderProps> = ({ onSidebarToggle }) => {
+const Header = ({ onSidebarToggle }) => {
   return (
     <header className="sticky top-0 z-10 bg-transparent">
       <div className="w-full bg-gradient-to-b from-[#b6e3ff] via-[#b6e3ff] to-transparent">
