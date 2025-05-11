@@ -1,0 +1,8 @@
+{
+  "id": "string",
+  "userId": "string",
+  "plan": "string",
+  "startDate": "Date",
+  "endDate": "Date",
+  "user": "User"
+}

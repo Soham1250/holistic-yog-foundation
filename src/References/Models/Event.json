@@ -1,0 +1,9 @@
+{
+  "id": "string",
+  "date": "Date",
+  "venue": "string",
+  "speakers": ["User"],
+  "bannerImage": "string",
+  "createdAt": "Date",
+  "updatedAt": "Date"
+}

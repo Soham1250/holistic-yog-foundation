@@ -1,0 +1,8 @@
+{
+  "id": "string",
+  "userId": "string",
+  "experience": "string",
+  "languages": ["string"],
+  "certifications": ["string"],
+  "courses": ["Course"]
+}
