@@ -1,0 +1,96 @@
+// Prisma schema for Holistic Yog Foundation
+// Adjust datasource and generator as needed
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum UserRole {
+  MEMBER
+  INSTRUCTOR
+  ADMIN
+}
+
+model User {
+  id           String   @id @default(uuid())
+  name         String
+  email        String   @unique
+  password     String
+  role         UserRole
+  image        String?
+  bio          String?
+  isActive     Boolean  @default(true)
+  memberships  Membership[]
+  instructor   InstructorProfile?
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+}
+
+model InstructorProfile {
+  id             String   @id @default(uuid())
+  userId         String   @unique
+  experience     String?
+  languages      String[]
+  certifications String[]
+  courses        Course[]
+  user           User     @relation(fields: [userId], references: [id])
+}
+
+model Course {
+  id           String   @id @default(uuid())
+  title        String
+  description  String
+  image        String?
+  instructorId String
+  instructor   InstructorProfile @relation(fields: [instructorId], references: [id])
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+}
+
+model Event {
+  id           String   @id @default(uuid())
+  title        String
+  description  String
+  date         DateTime
+  venue        String
+  speakers     User[]
+  bannerImage  String?
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+}
+
+model Membership {
+  id        String   @id @default(uuid())
+  userId    String
+  plan      String
+  startDate DateTime
+  endDate   DateTime?
+  user      User     @relation(fields: [userId], references: [id])
+}
+
+model Service {
+  id          String   @id @default(uuid())
+  name        String
+  description String
+  image       String?
+}
+
+model Banner {
+  id       String   @id @default(uuid())
+  title    String
+  content  String
+  image    String?
+  link     String?
+  isActive Boolean  @default(true)
+}
+
+model FAQ {
+  id       String   @id @default(uuid())
+  question String
+  answer   String
+}

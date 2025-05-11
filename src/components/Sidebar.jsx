@@ -11,19 +11,23 @@ import {
   DocumentTextIcon, 
   BeakerIcon, 
   UserCircleIcon, 
-  TrophyIcon 
+  TrophyIcon,
+  UserIcon
 } from '@heroicons/react/24/outline';
 
 const menuItems = [
   { name: 'Home', href: '/', icon: HomeIcon },
-  { name: 'Courses', href: '/courses', icon: AcademicCapIcon },
+  { name: 'Courses', href: '/all-courses', icon: AcademicCapIcon },
   { name: 'Programs', href: '/', icon: UserGroupIcon },
-  { name: 'Membership', href: '/membership', icon: CalendarIcon },
-  { name: 'Gallery', href: '/', icon: PhotoIcon },
-  { name: 'Articles', href: '/articles', icon: DocumentTextIcon },
   { name: 'Workshops', href: '/', icon: BeakerIcon },
   { name: 'Conferences', href: '/conferences', icon: UserCircleIcon },
   { name: 'Competitions', href: '/', icon: TrophyIcon },
+  { name: 'Membership', href: '/membership', icon: CalendarIcon },
+  { name: 'Articles', href: '/articles', icon: DocumentTextIcon },
+  { name: 'Gallery', href: '/gallery', icon: PhotoIcon },
+  { name: 'Volunteers', href: '/volunteers', icon: UserIcon },
+  { name: 'Life Members', href: '/life-members', icon:  UserIcon},
+  { name: 'Committee Members', href: '/committee-members', icon: UserIcon },
 ];
 
 const Sidebar = ({ isOpen, onClose, onMouseEnter, onMouseLeave }) => {
@@ -35,19 +39,19 @@ const Sidebar = ({ isOpen, onClose, onMouseEnter, onMouseLeave }) => {
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
     >
-      <nav className="h-full flex flex-col pt-2">
-        <ul className="flex-1 space-y-1">
-          {menuItems.map((item) => (
+      <nav className="h-[calc(100vh-4rem)] flex flex-col pt-2 ">
+      <ul className="h-[calc(100vh-4rem)] flex flex-col pt-2 ">
+      {menuItems.map((item) => (
             <li key={item.name}>
               <Link
                 href={item.href}
-                className="flex items-center px-5 py-3 text-white hover:bg-[#474343] transition-colors rounded-md"
+                className="flex items-center px-5 py-2 text-white hover:bg-[#474343] transition-colors rounded-md"
               >
                 <div className="w-8 h-8 flex items-center justify-center">
                   <item.icon className="w-6 h-6" />
                 </div>
                 <span 
-                  className={`ml-4 text-sm font-medium tracking-wider whitespace-nowrap transition-opacity duration-300 ${
+                  className={`ml-2 text-sm font-medium tracking-wider whitespace-nowrap transition-opacity duration-300 ${
                     isOpen ? 'opacity-100' : 'opacity-0 absolute'
                   }`}
                 >

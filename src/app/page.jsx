@@ -1,21 +1,45 @@
-import React from 'react';
+"use client";
+
+import React, { useEffect } from 'react';
+
+import { useSectionContext } from '@/contexts/SectionContext';
+import HeadingSection from '@/components/sections/HeadingSection';
+import ImagesSection from '@/components/sections/ImagesSection';
+import AboutUsSection from '@/components/sections/AboutUsSection';
+import ServicesSection from '@/components/sections/ServicesSection';
+import CoursesSection from '@/components/sections/CoursesSection';
+import BannerSection from '@/components/sections/BannerSection';
+import InstructorsSection from '@/components/sections/InstructorsSection';
+import WhyUsSection from '@/components/sections/WhyUsSection';
+import MembershipSection from '@/components/sections/MembershipSection';
 
 export default function Home() {
+  const { setActiveSection } = useSectionContext();
+
+  // Set the active section to 'courses' when this page loads
+  useEffect(() => {
+    setActiveSection('courses');
+  }, [setActiveSection]);
+
   return (
-    <div className="min-h-screen bg-[#FDF8F3]">
-      {/* Add empty space to push footer down */}
-      <div className="py-10 md:py-10"></div>
-      
-      {/* Placeholder content - can be replaced with actual content later */}
-      <div className="container mx-auto px-4 text-center">
-        <h1 className="text-4xl md:text-5xl font-bold text-black mb-6">Welcome to Holistic Yog Foundation</h1>
-        <p className="text-xl text-black mb-8 max-w-3xl mx-auto">
-          Explore our courses, memberships, and conferences to begin your journey toward holistic well-being.
-        </p>
+    <div className="space-y-12">
+      <div className="flex flex-col md:flex-row gap-8">
+        <div className="md:w-2/3">
+          <HeadingSection />
+        </div>
+        <div className="md:w-1/3">
+          <ImagesSection />
+        </div>
       </div>
       
-      {/* Additional space */}
-      <div className="py-10"></div>
+      {/* Display remaining sections */}
+      <BannerSection />
+      <AboutUsSection />
+      <ServicesSection />
+      <CoursesSection />
+      <InstructorsSection />
+      <WhyUsSection />
+      <MembershipSection />
     </div>
   );
 }

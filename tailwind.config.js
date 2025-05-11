@@ -10,6 +10,8 @@ module.exports = {
       fontFamily: {
         sans: ['var(--font-geist-sans)', 'sans-serif'],
         mono: ['var(--font-geist-mono)', 'monospace'],
+        mont: ['var(--font-mont)'],
+        roboto: ['var(--font-roboto)'],
       },
       colors: {
         primary: {
@@ -38,5 +40,5 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  plugins: [require('tailwind-scrollbar-hide')],
 }

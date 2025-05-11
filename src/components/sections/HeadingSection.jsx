@@ -1,4 +1,5 @@
 "use client";
+import { Montserrat, Roboto } from 'next/font/google';
 
 import React from 'react';
 const HeadingSection = ({ 
@@ -8,16 +9,19 @@ const HeadingSection = ({
   return (
     <div className="bg-white rounded-lg p-6 h-full flex flex-col justify-between">
       <div>
-        <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+        <h1 className="text-3xl md:text-4xl font-bold text-gray-700 mb-4 font-montserrat">
           {title}
         </h1>
-        <p className="text-lg text-gray-600 mb-6">
+        <p className="text-lg text-gray-600 mb-6 font-montserrat">
           {subtitle}
         </p>
       </div>
       
       <div className="mt-4">
         <div className="flex gap-3 mb-4">
+          <button className="bg-orange-400 hover:bg-orange-500 text-white font-medium py-2 px-6 rounded-full border border-gray-300 transition-colors">
+            JOIN US
+          </button>
           <button className="bg-white hover:bg-gray-100 text-gray-800 font-medium py-2 px-6 rounded-full border border-gray-300 transition-colors">
             VIEW DETAILS
           </button>
