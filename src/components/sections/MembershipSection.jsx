@@ -26,17 +26,32 @@ const MembershipSection = ({
   return (
     <div className="bg-[#fdf7f2] rounded-lg p-8">
       <div className="flex flex-col md:flex-row items-center gap-8">
-        <div className="md:w-1/2 space-y-4">
-          <h2 className="text-3xl font-bold text-gray-800 flex items-center">
-            <CreditCardIcon className="w-6 h-6 text-blue-500 mr-2" />
-            {plan.title}
-          </h2>
-          <div className="flex items-baseline">
-            <span className="text-4xl font-bold text-gray-900">{plan.price}</span>
-            <span className="text-xl text-gray-600 ml-2"> {plan.duration} purchase</span>
+        {/* Left side - Text, Price, and Button */}
+        <div className="md:w-1/2 space-y-6">
+          <div className="space-y-4">
+            <h2 className="text-3xl font-bold text-gray-800 flex items-center">
+              <CreditCardIcon className="w-6 h-6 text-blue-500 mr-2" />
+              {plan.title}
+            </h2>
+            <div className="flex items-baseline">
+              <span className="text-4xl font-bold text-gray-900">{plan.price}</span>
+              <span className="text-xl text-gray-600 ml-2"> {plan.duration} purchase</span>
+            </div>
           </div>
           
-          <div className="relative h-48 md:h-64 w-full rounded-lg overflow-hidden mt-4">
+          <div className="pt-4">
+            <a 
+              href="/membershipform" 
+              className="inline-block bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-full transition-colors duration-300 text-lg"
+            >
+              Get Membership
+            </a>
+          </div>
+        </div>
+        
+        {/* Right side - Image */}
+        <div className="md:w-1/2">
+          <div className="relative h-64 w-full rounded-lg overflow-hidden">
             <div className="absolute inset-0 bg-gray-200">
               <img 
                 src="/images/join us.jpg" 
@@ -54,36 +69,26 @@ const MembershipSection = ({
             </div>
           </div>
         </div>
-        
-        <div className="md:w-1/2">
-          <div className="flex flex-col items-center justify-center h-full">
-            <a 
-              href="/membershipform" 
-              className="bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-full transition-colors duration-300 text-lg mt-6"
-            >
-              Get Membership
-            </a>
+      </div>
+      
+      {/* Commented out What's included section
+      <div className="relative mt-8">
+        <div className="bg-[#d3ebff] rounded-xl p-6">
+          <div className="text-center mb-6">
+            <h3 className="font-semibold text-lg text-black">What's included:</h3>
           </div>
-          {/* Commented out What's included section
-          <div className="relative mt-8">
-            <div className="bg-[#d3ebff] rounded-xl p-6">
-              <div className="text-center mb-6">
-                <h3 className="font-semibold text-lg text-black">What's included:</h3>
-              </div>
-              
-              <ul className="space-y-4 max-w-md mx-auto">
-                {plan.features.map((feature, index) => (
-                  <li key={index} className="flex items-start">
-                    <span className="text-blue-500 mr-3 ml-2">•</span>
-                    <span className="text-gray-700 text-sm">{feature}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-          */}
+          
+          <ul className="space-y-4 max-w-md mx-auto">
+            {plan.features.map((feature, index) => (
+              <li key={index} className="flex items-start">
+                <span className="text-blue-500 mr-3 ml-2">•</span>
+                <span className="text-gray-700 text-sm">{feature}</span>
+              </li>
+            ))}
+          </ul>
         </div>
       </div>
+      */}
     </div>
   );
 };

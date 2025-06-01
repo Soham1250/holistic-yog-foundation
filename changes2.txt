@@ -6,14 +6,14 @@ Sign in button comment out - done
 number will be updated 
 annual membership, 799 ->  INR 5000 lifetime 
 opening timmings comment out - done
-what's included comment out
+what's included comment out - done
 links 
 links will contain
 Home, Membership, Conferences, Articles
-workshops comment out
+workshops comment out - done
 
 Membership form mandates user to upload ss of the payment and transaction id.
-QR code and bank details
+QR code and bank details -done
 
 comment out
 courses

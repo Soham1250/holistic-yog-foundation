@@ -6,7 +6,7 @@ import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 import { EyeIcon, EyeSlashIcon } from '@heroicons/react/24/outline';
 
-export default function SignupPage() {
+export default function MembershipFormPage() {
   const router = useRouter();
   const [formData, setFormData] = useState({
     firstName: '',
@@ -39,13 +39,38 @@ export default function SignupPage() {
     comments: '',
     membershipType: 'Life Member (Ajeevan Sadassya)',
     confirmInfo: false,
-    agreeCode: false
+    agreeCode: false,
+    transactionId: '',
+    paymentScreenshot: null
   });
+
+  // Function to handle numeric input
+  const handleNumericInput = (e) => {
+    const { name, value } = e.target;
+    // Only allow numbers and backspace/delete
+    if (value === '' || /^\d+$/.test(value)) {
+      setFormData({
+        ...formData,
+        [name]: value
+      });
+    }
+  };
   
   const [profilePhoto, setProfilePhoto] = useState(null);
   const [resume, setResume] = useState(null);
+  const [paymentScreenshot, setPaymentScreenshot] = useState(null);
   const [showPassword, setShowPassword] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleDownloadForm = () => {
+    // Create a temporary link element
+    const link = document.createElement('a');
+    link.href = '/blank-membership-form.pdf'; // Update this path to your actual PDF location
+    link.download = 'Holistic-Yog-Foundation-Membership-Form.pdf';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
 
   const handleInputChange = (e) => {
     const { name, value, type, checked } = e.target;
@@ -77,13 +102,28 @@ export default function SignupPage() {
   };
 
   return (
-    <div className="bg-[#FDF8F3] border border-gray-200 rounded-lg min-h-screen py-8 select-none mx-auto pd-20">
+    <div className="bg-[#FFF3E2] border border-gray-200 rounded-lg min-h-screen py-8 select-none mx-auto pd-20">
       <div className="container mx-auto px-4">
         <div className="max-w-5xl mx-auto">
-          <h1 className="text-3xl font-bold text-gray-900 mb-2">Life Membership Form</h1>
-          <p className="text-gray-700 mb-8">Make a One-Time Contribution and Enjoy Exclusive Wellness Benefits for Life</p>
-          
           <div className="bg-white rounded-lg shadow-sm p-8 mb-8">
+            <div className="text-center mb-8">
+              <h1 className="text-3xl font-bold text-gray-900 mb-3">Become a Member</h1>
+              <p className="text-gray-600 max-w-2xl mx-auto">
+                Join Holistic Yog Foundation and become part of a thriving community dedicated to wellness and personal growth.
+              </p>
+              <div className="flex justify-center mb-8">
+                <button
+                  type="button"
+                  onClick={handleDownloadForm}
+                  className="bg-orange-500 hover:bg-orange-600 text-white flex items-center px-6 py-2 border border-orange-500 text-orange-500 rounded-full hover:bg-orange-50 transition-colors"
+                >
+                  <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                  </svg>
+                  Download Blank Form
+                </button>
+              </div>
+            </div>
             <form onSubmit={handleSubmit}>
               {/* Personal Information */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
@@ -140,13 +180,13 @@ export default function SignupPage() {
                     Date of Birth (DD-MM-YYYY)<span className="text-red-500">*</span>
                   </label>
                   <input
-                    type="text"
+                    type="date"
                     id="dob"
                     name="dob"
                     value={formData.dob}
                     onChange={handleInputChange}
-                    placeholder="dd-mm-yyyy"
-                    className="text-black w-full px-4 py-2 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-orange-500"
+                    max={new Date().toISOString().split('T')[0]} // Prevent future dates
+                    className="text-black w-full px-4 py-2 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-orange-500 appearance-none"
                     required
                   />
                 </div>
@@ -261,8 +301,11 @@ export default function SignupPage() {
                     id="pinCode"
                     name="pinCode"
                     value={formData.pinCode}
-                    onChange={handleInputChange}
+                    onChange={handleNumericInput}
                     placeholder="Enter pincode"
+                    maxLength="6"
+                    pattern="\d{6}"
+                    title="Please enter a valid 6-digit pincode"
                     className="text-black w-full px-4 py-2 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-orange-500"
                     required
                   />
@@ -277,8 +320,11 @@ export default function SignupPage() {
                     id="phoneNo"
                     name="phoneNo"
                     value={formData.phoneNo}
-                    onChange={handleInputChange}
-                    placeholder="Enter phone.no"
+                    onChange={handleNumericInput}
+                    placeholder="Enter phone number"
+                    maxLength="10"
+                    pattern="[0-9]{10}"
+                    title="Please enter a valid 10-digit phone number"
                     className="text-black w-full px-4 py-2 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-orange-500"
                     required
                   />
@@ -293,8 +339,11 @@ export default function SignupPage() {
                     id="mobile"
                     name="mobile"
                     value={formData.mobile}
-                    onChange={handleInputChange}
-                    placeholder="Enter your mobile.no"
+                    onChange={handleNumericInput}
+                    placeholder="Enter your mobile number"
+                    maxLength="10"
+                    pattern="[0-9]{10}"
+                    title="Please enter a valid 10-digit mobile number"
                     className="text-black w-full px-4 py-2 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-orange-500"
                     required
                   />
@@ -461,8 +510,11 @@ export default function SignupPage() {
                     id="institutionPhone"
                     name="institutionPhone"
                     value={formData.institutionPhone}
-                    onChange={handleInputChange}
-                    placeholder="Enter Phone.no"
+                    onChange={handleNumericInput}
+                    placeholder="Enter institution phone number"
+                    maxLength="15"
+                    pattern="[0-9]+"
+                    title="Please enter a valid phone number"
                     className="text-black w-full px-4 py-2 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-orange-500"
                   />
                 </div>
@@ -491,7 +543,7 @@ export default function SignupPage() {
                     name="referenceBy"
                     value={formData.referenceBy}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-2 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-orange-500 appearance-none bg-white"
+                    className="text-black w-full px-4 py-2 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-orange-500 appearance-none bg-white"
                     required
                   >
                     <option value="">Select Referred By</option>
@@ -579,6 +631,146 @@ export default function SignupPage() {
                     placeholder="Enter your message"
                     className="text-black w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 h-32"
                   ></textarea>
+                </div>
+              </div>
+
+              {/* Payment Section */}
+              <div className="mb-8">
+                <h3 className="text-xl font-semibold text-gray-800 mb-6 pb-2 border-b border-gray-200">Payment Information</h3>
+                
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                  {/* Bank Transfer Option */}
+                  <div className="bg-gray-50 p-6 rounded-lg border border-gray-200">
+                    <h4 className="text-lg font-medium text-gray-800 mb-4 flex items-center">
+                      <svg className="w-5 h-5 mr-2 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" />
+                      </svg>
+                      Pay directly to the bank
+                    </h4>
+                    <div className="space-y-3 text-gray-700">
+                      <p className="font-medium">Holistic YOG Foundation</p>
+                      <div className="bg-white p-4 rounded-lg border border-gray-200">
+                        <div className="grid grid-cols-2 gap-2 text-sm">
+                          <span className="text-gray-500">Account No.:</span>
+                          <span className="font-mono">120100000190911</span>
+                          
+                          <span className="text-gray-500">IFSC:</span>
+                          <span className="font-mono">TJSB0000058</span>
+                          
+                          <span className="text-gray-500">MICR Code:</span>
+                          <span className="font-mono">400109030</span>
+                          
+                          <span className="text-gray-500">Bank Name:</span>
+                          <span className="font-mono">TJSB SAHAKARI BANK LTD</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  {/* UPI Payment Option */}
+                  <div className="bg-gray-50 p-6 rounded-lg border border-gray-200">
+                    <h4 className="text-lg font-medium text-gray-800 mb-4 flex items-center">
+                      <svg className="w-5 h-5 mr-2 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
+                      </svg>
+                      Pay via UPI using QR Code
+                    </h4>
+                    <div className="flex flex-col items-center">
+                      <div className="bg-white p-4 rounded-lg border border-gray-200 mb-4 flex justify-center w-full">
+                        <div className="relative w-full max-w-[280px]">
+                          <Image 
+                            src="/images/QR Code.jpg" 
+                            alt="UPI QR Code" 
+                            width={280}
+                            height={280}
+                            className="rounded w-full h-auto"
+                            priority
+                          />
+                        </div>
+                      </div>
+                      <p className="text-sm text-gray-500 text-center">Scan the QR code using any UPI app to make payment</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Transaction ID and Payment Proof */}
+              <div className="mb-8">
+                <h3 className="text-xl font-semibold text-gray-800 mb-6 pb-2 border-b border-gray-200">Payment Confirmation</h3>
+                
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  {/* Transaction ID */}
+                  <div className="md:pr-4">
+                    <div className="flex items-center mb-1">
+                      <label htmlFor="transactionId" className="text-gray-700 font-medium">
+                        Transaction ID<span className="text-red-500">*</span>
+                      </label>
+                      <div className="group relative ml-2">
+                        <svg 
+                          xmlns="http://www.w3.org/2000/svg" 
+                          className="h-5 w-5 text-gray-400 hover:text-gray-500 cursor-help" 
+                          fill="none" 
+                          viewBox="0 0 24 24" 
+                          stroke="currentColor"
+                        >
+                          <path 
+                            strokeLinecap="round" 
+                            strokeLinejoin="round" 
+                            strokeWidth={2} 
+                            d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" 
+                          />
+                        </svg>
+                        <div className="absolute z-10 hidden group-hover:block w-72 bg-white p-3 rounded-lg shadow-lg border border-gray-200 text-sm text-gray-600 mt-1">
+                          A Transaction ID in India is a unique number assigned to each digital or bank transaction. It helps identify, track, and verify payments across systems like UPI, NEFT, or credit cards. This ID ensures secure and traceable financial operations.
+                        </div>
+                      </div>
+                    </div>
+                    <input
+                      type="text"
+                      id="transactionId"
+                      name="transactionId"
+                      value={formData.transactionId}
+                      onChange={handleInputChange}
+                      placeholder="Enter UPI Transaction ID / Bank Reference Number"
+                      className="text-black w-full px-4 py-2 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-orange-500"
+                      required
+                    />
+                    <p className="text-sm text-gray-500 mt-1 ml-1">Please enter the transaction ID from your payment receipt</p>
+                  </div>
+                  
+                  {/* Payment Screenshot Upload */}
+                  <div className="md:pl-4">
+                    <label className="block text-gray-700 font-medium mb-1">
+                      Payment Screenshot<span className="text-red-500">*</span>
+                    </label>
+                    <div className="mt-1 flex items-center">
+                      <label
+                        htmlFor="payment-screenshot"
+                        className="cursor-pointer bg-white py-2 px-4 border border-gray-300 rounded-full shadow-sm text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-500"
+                      >
+                        <span>Upload Screenshot</span>
+                        <input
+                          id="payment-screenshot"
+                          name="paymentScreenshot"
+                          type="file"
+                          accept="image/*,.pdf"
+                          className="sr-only"
+                          onChange={(e) => {
+                            if (e.target.files && e.target.files[0]) {
+                              setPaymentScreenshot(e.target.files[0]);
+                            }
+                          }}
+                          required
+                        />
+                      </label>
+                      <span className="ml-4 text-sm text-gray-500">
+                        {paymentScreenshot ? paymentScreenshot.name : 'No file chosen'}
+                      </span>
+                    </div>
+                    <p className="mt-1 text-sm text-gray-500">
+                      Upload a clear screenshot of your payment confirmation (JPG, PNG, or PDF, max 5MB)
+                    </p>
+                  </div>
                 </div>
               </div>
 

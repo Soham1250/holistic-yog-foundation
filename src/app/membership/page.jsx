@@ -88,7 +88,7 @@ export default function MembershipPage() {
                 </ul>
               </div>
             </div>
-            <Link href="/signup">
+            <Link href="/membershipform">
               <button className="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-orange-500 hover:bg-orange-600 text-white font-medium py-2 px-6 rounded-full text-sm transition-colors">
                 Join Now
               </button>
@@ -117,7 +117,7 @@ export default function MembershipPage() {
                 </ul>
               </div>
             </div>
-            <Link href="/signup">
+            <Link href="/membershipform">
               <button className="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-orange-500 hover:bg-orange-600 text-white font-medium py-2 px-6 rounded-full text-sm transition-colors">
                 Join Now
               </button>
@@ -146,7 +146,7 @@ export default function MembershipPage() {
                 </ul>
               </div>
             </div>
-            <Link href="/signup">
+            <Link href="/membershipform">
               <button className="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-orange-500 hover:bg-orange-600 text-white font-medium py-2 px-6 rounded-full text-sm transition-colors">
                 Join Now
               </button>
@@ -199,49 +199,18 @@ export default function MembershipPage() {
 
       {/* FAQ Section */}
       <div className="py-12">
-        <div className="max-w-3xl mx-auto px-4">
-          <h2 className="text-2xl font-bold text-gray-900 text-center mb-8">
-            <span className="inline-flex items-center justify-center w-full">
-              <QuestionMarkCircleIcon className="w-5 h-5 mr-2 text-orange-500" />
-              Frequently Asked Questions
-            </span>
-          </h2>
-
+        <div className="max-w-4xl mx-auto px-4">
+          <h2 className="text-2xl font-bold text-center mb-8">Frequently Asked Questions</h2>
           <div className="space-y-4">
             {faqs.map((faq, index) => (
-              <div
-                key={index}
-                className="bg-white rounded-lg overflow-hidden shadow-sm border border-gray-200"
-              >
-                <details className="group">
-                  <summary className="flex items-center justify-between p-4 cursor-pointer">
-                    <h3 className="font-medium text-gray-800 pointer-events-none">{faq.question}</h3>
-                    <span className="text-gray-400 group-open:rotate-180 transition-transform">
-                      <ArrowDownIcon className="w-5 h-5" />
-                    </span>
-                  </summary>
-                  <div className="p-4 pt-0">
-                    <p className="text-gray-700 pointer-events-none">{faq.answer}</p>
-                  </div>
-                </details>
+              <div key={index} className="border-b border-gray-200 pb-4">
+                <h3 className="text-lg font-medium text-gray-900">{faq.question}</h3>
+                <p className="mt-2 text-gray-600">{faq.answer}</p>
               </div>
             ))}
           </div>
         </div>
       </div>
-      {/* Add global styles to prevent text selection */}
-      <style jsx global>{`
-        .select-none {
-          -webkit-user-select: none;
-          -moz-user-select: none;
-          -ms-user-select: none;
-          user-select: none;
-        }
-        
-        .pointer-events-none {
-          pointer-events: none;
-        }
-      `}</style>
     </div>
   );
 }
