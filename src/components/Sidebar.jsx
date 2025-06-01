@@ -33,14 +33,14 @@ const menuItems = [
 const Sidebar = ({ isOpen, onClose, onMouseEnter, onMouseLeave }) => {
   return (
     <aside
-      className={`fixed top-16 left-0 z-50 h-[calc(100vh-4rem)] bg-[#353232]/80 backdrop-blur-sm transition-all duration-300 ease-in-out ${
-        isOpen ? 'w-64 px-2' : 'w-16 px-1'
+      className={`fixed top-16 left-0 z-50 h-[calc(100vh-4rem)] bg-[#353232] transition-all duration-300 ease-in-out ${
+        isOpen ? 'w-64' : 'w-16'
       }`}
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
     >
-      <nav className="h-[calc(100vh-4rem)] flex flex-col pt-2 ">
-      <ul className="h-[calc(100vh-4rem)] flex flex-col pt-2 ">
+      <nav className="h-full flex flex-col">
+      <ul className="flex-1 overflow-y-auto py-2 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
       {menuItems.map((item) => (
             <li key={item.name}>
               <Link

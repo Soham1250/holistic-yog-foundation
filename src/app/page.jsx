@@ -7,18 +7,16 @@ import HeadingSection from '@/components/sections/HeadingSection';
 import ImagesSection from '@/components/sections/ImagesSection';
 import AboutUsSection from '@/components/sections/AboutUsSection';
 import ServicesSection from '@/components/sections/ServicesSection';
-import CoursesSection from '@/components/sections/CoursesSection';
 import BannerSection from '@/components/sections/BannerSection';
-import InstructorsSection from '@/components/sections/InstructorsSection';
 import WhyUsSection from '@/components/sections/WhyUsSection';
 import MembershipSection from '@/components/sections/MembershipSection';
 
 export default function Home() {
   const { setActiveSection } = useSectionContext();
 
-  // Set the active section to 'courses' when this page loads
+  // Set the active section when this page loads
   useEffect(() => {
-    setActiveSection('courses');
+    setActiveSection('home');
   }, [setActiveSection]);
 
   return (
@@ -36,8 +34,6 @@ export default function Home() {
       <BannerSection />
       <AboutUsSection />
       <ServicesSection />
-      <CoursesSection />
-      <InstructorsSection />
       <WhyUsSection />
       <MembershipSection />
     </div>

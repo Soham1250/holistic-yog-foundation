@@ -6,9 +6,9 @@ import { CreditCardIcon } from '@heroicons/react/24/outline';
 // Default plan data
 const defaultPlan = {
   id: '1',
-  title: 'Annual Membership',
-  price: 799,
-  duration: 'month',
+  title: 'Life-Time Membership',
+  price: '₹5,000',
+  duration: 'one-time',
   features: [
     'Unlimited access to all yoga classes',
     'Access to guided meditation & mindfulness programs',
@@ -32,8 +32,8 @@ const MembershipSection = ({
             {plan.title}
           </h2>
           <div className="flex items-baseline">
-            <span className="text-4xl font-bold text-gray-900">{plan.price}rs</span>
-            <span className="text-xl text-gray-600 ml-2">/ {plan.duration}</span>
+            <span className="text-4xl font-bold text-gray-900">{plan.price}</span>
+            <span className="text-xl text-gray-600 ml-2"> {plan.duration} purchase</span>
           </div>
           
           <div className="relative h-48 md:h-64 w-full rounded-lg overflow-hidden mt-4">
@@ -56,8 +56,16 @@ const MembershipSection = ({
         </div>
         
         <div className="md:w-1/2">
-          <div className="relative">
-            {/* Rectangular container with rounded corners */}
+          <div className="flex flex-col items-center justify-center h-full">
+            <a 
+              href="/membershipform" 
+              className="bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-full transition-colors duration-300 text-lg mt-6"
+            >
+              Get Membership
+            </a>
+          </div>
+          {/* Commented out What's included section
+          <div className="relative mt-8">
             <div className="bg-[#d3ebff] rounded-xl p-6">
               <div className="text-center mb-6">
                 <h3 className="font-semibold text-lg text-black">What's included:</h3>
@@ -73,6 +81,7 @@ const MembershipSection = ({
               </ul>
             </div>
           </div>
+          */}
         </div>
       </div>
     </div>

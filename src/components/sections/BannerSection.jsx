@@ -1,6 +1,6 @@
 "use client";
 
-import React from 'react';
+import React, { useState } from 'react';
 import Link from 'next/link';
 import { 
   CalendarIcon, 
@@ -8,16 +8,19 @@ import {
   MapPinIcon, 
   BoltIcon,
   MegaphoneIcon,
+  XMarkIcon,
+  DocumentTextIcon,
   ArrowRightIcon
 } from '@heroicons/react/24/outline';
 
+
 // Default event data
 const defaultEvent = {
-  title: "Ayurveda & Mindfulness Conference",
-  description: "Dive into traditional healing practices and their integration into modern lifestyle therapies.",
-  date: "July 8, 2025",
-  time: "10:00 AM - 5:30 PM",
-  venue: "Matunga Mumbai, India"
+  title: "Yoga, Sports and Wellbeing: A Holistic Approach",
+  description: "Join us for a transformative experience exploring the ancient wisdom of yoga, sports and its modern applications for holistic well-being.",
+  date: "June 28, 2025",
+  time: "All Day",
+  venue: "Teju Leela Auditorium, Shishuvan School, 426, Shraddhanand Road, King's Circle, Matunga Central, Mumbai-400019"
 };
 
 const BannerSection = ({
@@ -26,8 +29,49 @@ const BannerSection = ({
   event = defaultEvent,
   buttonText = "Register Now"
 }) => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   return (
     <div className="bg-[#FDF7F2] rounded-lg p-8">
+      {/* PDF Viewer Modal */}
+      {isModalOpen && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4">
+          <div className="bg-white rounded-lg max-w-4xl w-full max-h-[90vh] flex flex-col">
+            <div className="flex justify-between items-center p-4 border-b">
+              <h3 className="text-black text-lg font-medium">Event Details</h3>
+              <button 
+                onClick={() => setIsModalOpen(false)}
+                className="text-gray-500 hover:text-gray-700"
+              >
+                <XMarkIcon className="w-6 h-6" />
+              </button>
+            </div>
+            <div className="flex-1 overflow-auto p-4">
+              <div className="w-full h-full">
+                <iframe
+                  src="/pdfs/Brochure_V10-1.pdf"
+                  className="w-full h-[80vh] border-0 rounded-lg"
+                  title="Event Details PDF"
+                >
+                  <p>Your browser does not support PDFs. Please download the PDF to view it: 
+                    <a href="/pdfs/Brochure_V10-1.pdf" className="text-blue-500 hover:underline">
+                      Download PDF
+                    </a>
+                  </p>
+                </iframe>
+              </div>
+            </div>
+            <div className="p-4 border-t flex justify-end items-center">
+              <button 
+                onClick={() => setIsModalOpen(false)}
+                className="bg-orange-500 hover:bg-orange-600 text-white font-medium py-2 px-4 rounded-full transition-colors"
+              >
+                Close
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
       <div className="text-center mb-6">
         <div className="flex items-center justify-center mb-2">
           <MegaphoneIcon className="w-6 h-6 text-blue-500 mr-2" />
@@ -86,12 +130,19 @@ const BannerSection = ({
                 <p className="text-gray-700">Venue: <span className="font-medium">{event.venue}</span></p>
               </div>
               
-              <div className="mt-6">
-                <Link href="/conferences">
-                  <button className="bg-orange-500 hover:bg-orange-600 text-white font-medium py-2 px-6 rounded-full transition-colors">
+              <div className="mt-6 flex flex-wrap gap-3">
+                <Link href="/conferences" className="flex-1">
+                  <button className="w-full bg-orange-500 hover:bg-orange-600 text-white font-medium py-2 px-6 rounded-full transition-colors">
                     Register Now
                   </button>
                 </Link>
+                <button 
+                  onClick={() => setIsModalOpen(true)}
+                  className="bg-orange-500 hover:bg-orange-600 text-white flex-1 flex items-center justify-center gap-2 border border-orange-500 font-medium py-2 px-6 rounded-full transition-colors"
+                >
+                  <DocumentTextIcon className="w-5 h-5" />
+                  View Details
+                </button>
               </div>
             </div>            
           </div>
