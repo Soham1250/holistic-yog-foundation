@@ -839,12 +839,6 @@ export default function MembershipFormPage() {
               </div>
             </form>
           </div>
-          
-          <div className="text-center">
-            <p className="text-gray-600">
-              Already have an account? <Link href="/login" className="text-orange-500 hover:underline">Sign In</Link>
-            </p>
-          </div>
         </div>
       </div>
       

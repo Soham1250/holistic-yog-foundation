@@ -22,9 +22,9 @@ workshops
 gallery
 volunteers
 articles
-life time members
+life time members -Done
 
-card structure for conference listing similiar to courses catalogue
+card structure for conference listing similiar to courses catalogue - Done
 
 Commitee members will have a designation (text)
 opens info about the person.

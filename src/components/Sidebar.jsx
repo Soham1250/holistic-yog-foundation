@@ -17,16 +17,16 @@ import {
 
 const menuItems = [
   { name: 'Home', href: '/', icon: HomeIcon },
-  { name: 'Courses', href: '/all-courses', icon: AcademicCapIcon },
-  { name: 'Programs', href: '/', icon: UserGroupIcon },
-  { name: 'Workshops', href: '/', icon: BeakerIcon },
+  // { name: 'Courses', href: '/all-courses', icon: AcademicCapIcon },
+  // { name: 'Programs', href: '/', icon: UserGroupIcon },
+  // { name: 'Workshops', href: '/', icon: BeakerIcon },
   { name: 'Conferences', href: '/conferences', icon: UserCircleIcon },
   { name: 'Competitions', href: '/', icon: TrophyIcon },
   { name: 'Membership', href: '/membership', icon: CalendarIcon },
-  { name: 'Articles', href: '/articles', icon: DocumentTextIcon },
-  { name: 'Gallery', href: '/gallery', icon: PhotoIcon },
-  { name: 'Volunteers', href: '/volunteers', icon: UserIcon },
-  { name: 'Life Members', href: '/life-members', icon:  UserIcon},
+  // { name: 'Articles', href: '/articles', icon: DocumentTextIcon },
+  // { name: 'Gallery', href: '/gallery', icon: PhotoIcon },
+  // { name: 'Volunteers', href: '/volunteers', icon: UserIcon },
+  // { name: 'Life Members', href: '/life-members', icon:  UserIcon},
   { name: 'Committee Members', href: '/committee-members', icon: UserIcon },
 ];
 
