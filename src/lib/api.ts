@@ -34,15 +34,9 @@ export async function fetchSectionData(sectionName: SectionName) {
   } catch (error) {
     console.error(`Error fetching ${sectionName} data:`, error);
     
-    // Fallback to local JSON files during development
-    try {
-      // Dynamic import of the JSON file
-      const data = await import(`../References/${sectionName}.json`);
-      return data.default || data;
-    } catch (fallbackError) {
-      console.error(`Fallback error for ${sectionName}:`, fallbackError);
-      return null;
-    }
+    // Fallback to empty object instead of trying to import missing file
+    console.warn(`${sectionName}.json not found in References directory. Using empty data object.`);
+    return {};
   }
 }
 
@@ -62,13 +56,8 @@ export async function fetchAllSectionsData() {
     return await response.json();
   } catch (error) {
     console.error('Error fetching all sections data:', error);
-    // Fallback to local JSON file during development
-    try {
-      const data = await import('../References/API.json');
-      return data.default || data;
-    } catch (fallbackError) {
-      console.error('Fallback error for all sections:', fallbackError);
-      return null;
-    }
+    // Fallback to empty object instead of trying to import missing file
+    console.warn('API.json not found in References directory. Using empty data object.');
+    return {};
   }
 }
