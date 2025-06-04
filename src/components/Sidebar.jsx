@@ -30,24 +30,26 @@ const Sidebar = ({ isOpen, onClose, onMouseEnter, onMouseLeave }) => {
   return (
     <>
       {/* Overlay when sidebar is open */}
-      {isOpen && (
-        <div 
-          className="fixed z-40"
-          onClick={onClose}
-        />
-      )}
-      <aside
-        className={`fixed top-16 left-0 z-50 h-[calc(100vh-4rem)] bg-[#353232]/90 backdrop-blur-sm transition-all duration-300 ease-in-out ${
-          isOpen ? 'w-64' : 'w-16'
-        }`}
-        onMouseEnter={onMouseEnter}
-        onMouseLeave={onMouseLeave}
-        style={{
-          boxShadow: '2px 0 10px rgba(0, 0, 0, 0.1)'
-        }}
+      {/* Overlay for mobile when sidebar is open */}
+  {isOpen && (
+    <div 
+      className="fixed inset-0 z-40 bg-black/50 md:hidden transition-opacity duration-300"
+      onClick={onClose}
+      aria-hidden="true"
+    />
+  )}
+  <aside
+    className={`fixed top-16 left-0 z-50 h-[calc(100vh-4rem)] bg-[#353232]/90 backdrop-blur-sm transition-all duration-300 ease-in-out transform ${
+      isOpen ? 'translate-x-0 w-64' : '-translate-x-full md:translate-x-0 md:w-16'
+    }`}
+    onMouseEnter={onMouseEnter}
+    onMouseLeave={onMouseLeave}
+    style={{
+      boxShadow: '2px 0 10px rgba(0, 0, 0, 0.1)'
+    }}
       >
       <nav className="h-full flex flex-col">
-      <ul className="flex-1 overflow-y-auto py-2 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
+      <ul className="flex-1 overflow-y-auto py-2 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none] touch-pan-y">
       {menuItems.map((item) => (
             <li key={item.name}>
               <Link
