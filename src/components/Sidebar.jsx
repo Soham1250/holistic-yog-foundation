@@ -4,15 +4,11 @@ import React from 'react';
 import Link from 'next/link';
 import { 
   HomeIcon, 
-  AcademicCapIcon, 
-  UserGroupIcon, 
   CalendarIcon, 
-  PhotoIcon, 
-  DocumentTextIcon, 
-  BeakerIcon, 
   UserCircleIcon, 
   TrophyIcon,
-  UserIcon
+  StarIcon, 
+  IdentificationIcon , 
 } from '@heroicons/react/24/outline';
 
 const menuItems = [
@@ -21,24 +17,35 @@ const menuItems = [
   // { name: 'Programs', href: '/', icon: UserGroupIcon },
   // { name: 'Workshops', href: '/', icon: BeakerIcon },
   { name: 'Conferences', href: '/conferences', icon: UserCircleIcon },
-  { name: 'Competitions', href: '/', icon: TrophyIcon },
-  { name: 'Membership', href: '/membership', icon: CalendarIcon },
+  // { name: 'Competitions', href: '/', icon: TrophyIcon },
+  { name: 'Membership', href: '/membershipform', icon: CalendarIcon },
   // { name: 'Articles', href: '/articles', icon: DocumentTextIcon },
   // { name: 'Gallery', href: '/gallery', icon: PhotoIcon },
   // { name: 'Volunteers', href: '/volunteers', icon: UserIcon },
-  // { name: 'Life Members', href: '/life-members', icon:  UserIcon},
-  { name: 'Committee Members', href: '/committee-members', icon: UserIcon },
+  { name: 'Committee Members', href: '/committee-members', icon: IdentificationIcon },
+  { name: 'Life Members', href: '/lifetime-members', icon: StarIcon },
 ];
 
 const Sidebar = ({ isOpen, onClose, onMouseEnter, onMouseLeave }) => {
   return (
-    <aside
-      className={`fixed top-16 left-0 z-50 h-[calc(100vh-4rem)] bg-[#353232] transition-all duration-300 ease-in-out ${
-        isOpen ? 'w-64' : 'w-16'
-      }`}
-      onMouseEnter={onMouseEnter}
-      onMouseLeave={onMouseLeave}
-    >
+    <>
+      {/* Overlay when sidebar is open */}
+      {isOpen && (
+        <div 
+          className="fixed z-40"
+          onClick={onClose}
+        />
+      )}
+      <aside
+        className={`fixed top-16 left-0 z-50 h-[calc(100vh-4rem)] bg-[#353232]/90 backdrop-blur-sm transition-all duration-300 ease-in-out ${
+          isOpen ? 'w-64' : 'w-16'
+        }`}
+        onMouseEnter={onMouseEnter}
+        onMouseLeave={onMouseLeave}
+        style={{
+          boxShadow: '2px 0 10px rgba(0, 0, 0, 0.1)'
+        }}
+      >
       <nav className="h-full flex flex-col">
       <ul className="flex-1 overflow-y-auto py-2 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
       {menuItems.map((item) => (
@@ -62,7 +69,8 @@ const Sidebar = ({ isOpen, onClose, onMouseEnter, onMouseLeave }) => {
           ))}
         </ul>
       </nav>
-    </aside>
+      </aside>
+    </>
   );
 };
 
