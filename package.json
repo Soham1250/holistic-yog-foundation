@@ -13,6 +13,7 @@
     "@next/font": "^14.2.15",
     "@react-pdf/renderer": "^4.3.0",
     "next": "15.3.1",
+    "pdfjs-dist": "^5.3.31",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-pdf": "^9.2.1",
@@ -27,6 +28,7 @@
     "eslint": "^9",
     "eslint-config-next": "15.3.1",
     "tailwindcss": "^4",
-    "typescript": "^5"
+    "typescript": "^5",
+    "worker-loader": "^3.0.8"
   }
 }

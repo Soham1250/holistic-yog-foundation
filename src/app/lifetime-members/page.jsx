@@ -1,50 +1,74 @@
 'use client';
 
-import React from 'react';
+import React, { useState } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 
 // Sample data - replace with your actual data source
-const committeeMembers = [
+const LifeTimeMembers = [
   {
-    id: 1,
+    id: '1',
     name: 'Dr. Rohini Shetty',
-    designation: 'Life Member',
+    designation: 'Life Time Member',
     image: '/images/Committee-members/DrRohiniShetty.jpg',
+    achievementsPdf: '/pdfs/Achievements_of_Dr_Rohini_Prasad_Shetty.docx.pdf',
   },
 ];
 
 const LifeTimeMemberCard = ({ member }) => {
   return (
-    <div className="bg-white rounded-lg shadow-md overflow-hidden transition-transform duration-300 hover:shadow-lg hover:-translate-y-1">
-      <div className="relative h-64 w-full">
-        <Image
-          src={member.image}
-          alt={member.name}
-          fill
-          className="object-cover"
-          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-        />
+    <Link href={`/lifetime-members/${member.id}`} className="block group">
+      <div className="bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300 hover:shadow-lg hover:-translate-y-1 h-full flex flex-col">
+        <div className="relative h-64 w-full overflow-hidden">
+          <Image
+            src={member.image}
+            alt={member.name}
+            fill
+            className="object-cover transition-transform duration-300 group-hover:scale-105"
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+          />
+        </div>
+        <div className="p-4 flex-1 flex flex-col">
+          <h3 className="text-lg font-semibold text-gray-800 group-hover:text-orange-500 transition-colors">
+            {member.name}
+          </h3>
+          <p className="text-orange-500 text-sm font-medium mt-1">{member.designation}</p>
+          <p className="text-xs text-gray-500 mt-2 group-hover:text-gray-700 transition-colors">
+            Click to view achievements →
+          </p>
+        </div>
       </div>
-      <div className="p-4">
-        <h3 className="text-lg font-semibold text-gray-800">{member.name}</h3>
-        <p className="text-orange-500 text-sm font-medium">{member.designation}</p>
-      </div>
-    </div>
+    </Link>
   );
 };
 
-export default function LifeTimeMemberCardPage() {
+export default function LifeTimeMembersPage() {
+  const [searchTerm, setSearchTerm] = useState('');
+  const [activeTab, setActiveTab] = useState('life');
+
+  const filteredMembers = LifeTimeMembers.filter(member => 
+    (member.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+    member.designation.toLowerCase().includes(searchTerm.toLowerCase())) &&
+    (activeTab === 'all' || member.designation.toLowerCase().includes(activeTab.toLowerCase()))
+  );
+
   return (
     <div className="container mx-auto px-4 py-12">
-      <h1 className="text-3xl font-bold text-center mb-8 text-gray-800">Our Life Time Members</h1>
+      <h1 className="text-3xl font-bold text-center mb-8 text-gray-800">Our Lifetime Members</h1>
       <p className="text-center text-gray-600 max-w-2xl mx-auto mb-12">
-      Our members are passionate individuals from all walks of life, united by a shared commitment to holistic living, mindfulness, and continuous personal growth through yoga.
+        Our lifetime members are dedicated individuals who have made significant contributions to our community and are committed to the principles of holistic living and yoga.
       </p>
       
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-        {committeeMembers.map((member) => (
-          <LifeTimeMemberCard key={member.id} member={member} />
-        ))}
+        {filteredMembers.length > 0 ? (
+          filteredMembers.map((member) => (
+            <LifeTimeMemberCard key={member.id} member={member} />
+          ))
+        ) : (
+          <div className="col-span-full text-center py-8 text-gray-500">
+            No members found matching your search criteria.
+          </div>
+        )}
       </div>
     </div>
   );

@@ -2,6 +2,7 @@
 
 import React from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 
 const committeeMembers = [
   {
@@ -20,7 +21,7 @@ const committeeMembers = [
     id: 3,
     name: 'Dr. Rashmita Sabat',
     designation: 'Director',
-    image: '/images/Committee-members/RashmitaSabat.jpg',
+    image: '/images/People/pexels-danxavier-1239291.jpg',
   },
   {
     id: 4,
@@ -31,28 +32,36 @@ const committeeMembers = [
   {
     id: 5,
     name: 'Dr. Yadnyeshar Bagrao',
-    designation: 'Events Coordinator',
+    designation: 'Secretary',
     image: '/images/Committee-members/DrYadnyesharBagrao.jpg',
   },
 ];
 
+
 const CommitteeMemberCard = ({ member }) => {
   return (
-    <div className="bg-white rounded-lg shadow-md overflow-hidden transition-transform duration-300 hover:shadow-lg hover:-translate-y-1">
-      <div className="relative h-64 w-full">
-        <Image
-          src={member.image}
-          alt={member.name}
-          fill
-          className="object-cover"
-          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-        />
+    <Link href={`/committee-members/${member.id}`} className="block group">
+      <div className="bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300 hover:shadow-lg hover:-translate-y-1 h-full flex flex-col">
+        <div className="relative h-64 w-full overflow-hidden">
+          <Image
+            src={member.image}
+            alt={member.name}
+            fill
+            className="object-cover transition-transform duration-300 group-hover:scale-105"
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+          />
+        </div>
+        <div className="p-4 flex-1 flex flex-col">
+          <h3 className="text-lg font-semibold text-gray-800 group-hover:text-orange-500 transition-colors">
+            {member.name}
+          </h3>
+          <p className="text-orange-500 text-sm font-medium mt-1">{member.designation}</p>
+          <p className="text-xs text-gray-500 mt-2 group-hover:text-gray-700 transition-colors">
+            Click to view achievements →
+          </p>
+        </div>
       </div>
-      <div className="p-4">
-        <h3 className="text-lg font-semibold text-gray-800">{member.name}</h3>
-        <p className="text-orange-500 text-sm font-medium">{member.designation}</p>
-      </div>
-    </div>
+    </Link>
   );
 };
 
