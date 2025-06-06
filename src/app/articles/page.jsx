@@ -51,10 +51,10 @@ export default function ArticlesPage() {
                         Explore our latest articles on yoga, wellness, and healthy living.
                     </p>
                 </div>
-            </header>
+            </header>   
 
             {/* Main Content */}
-            <main className="container mx-auto px-4 py-12">
+            <main className="bg-[#FFF3E2] container mx-auto px-4 py-12">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                     {articles.map((article) => (
                         <Link
