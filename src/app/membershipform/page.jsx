@@ -272,7 +272,7 @@ export default function MembershipFormPage() {
                 
                 <div>
                   <label htmlFor="pinCode" className="block text-gray-700 font-medium mb-1">
-                    Pin code (numeric values only)<span className="text-red-500">*</span>
+                    Pin code (<span className="text-gray-500 ">numeric values only</span>)<span className="text-red-500">*</span>
                   </label>
                   <input
                     type="text"
@@ -291,7 +291,7 @@ export default function MembershipFormPage() {
                 
                 <div>
                   <label htmlFor="phoneNo" className="block text-gray-700 font-medium mb-1">
-                    Phone No (numeric values only)<span className="text-red-500">*</span>
+                    Phone No (<span className="text-gray-500">numeric values only</span>)<span className="text-red-500">*</span>
                   </label>
                   <input
                     type="tel"
@@ -310,7 +310,7 @@ export default function MembershipFormPage() {
                 
                 <div>
                   <label htmlFor="mobile" className="block text-gray-700 font-medium mb-1">
-                    Mobile (numeric values only)<span className="text-red-500">*</span>
+                    Mobile (<span className="text-gray-500">numeric values only</span>)<span className="text-red-500">*</span>
                   </label>
                   <input
                     type="tel"
@@ -618,19 +618,21 @@ export default function MembershipFormPage() {
                 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                   {/* Bank Transfer Option */}
-                  <div className="bg-gray-50 p-6 rounded-lg border border-gray-200">
-                    <h4 className="text-lg font-medium text-gray-800 mb-4 flex items-center">
-                      <svg className="w-5 h-5 mr-2 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" />
-                      </svg>
-                      Pay directly to the bank
+                  <div className="bg-gray-50 p-6 rounded-lg border border-gray-200 h-full">
+                    <h4 className="text-lg font-medium text-gray-800 mb-4">
+                      <div className="flex flex-wrap items-center">
+                        <svg className="flex-shrink-0 w-5 h-5 mr-2 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" />
+                        </svg>
+                        <span className="whitespace-normal">Pay directly to the bank</span>
+                      </div>
                     </h4>
                     <div className="space-y-3 text-gray-700">
                       <p className="font-medium">Holistic YOG Foundation</p>
                       <div className="bg-white p-4 rounded-lg border border-gray-200">
                         <div className="grid grid-cols-2 gap-2 text-sm">
                           <span className="text-gray-500">Account No.:</span>
-                          <span className="font-mono">120100000190911</span>
+                          <span className="font-mono text-sm">120100000190911</span>
                           
                           <span className="text-gray-500">IFSC:</span>
                           <span className="font-mono">TJSB0000058</span>

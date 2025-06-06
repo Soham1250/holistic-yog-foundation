@@ -5,10 +5,10 @@ import Link from 'next/link';
 import { 
   HomeIcon, 
   CalendarIcon, 
-  UserCircleIcon, 
-  TrophyIcon,
+  UserCircleIcon,
   StarIcon, 
-  IdentificationIcon , 
+  IdentificationIcon,
+  DocumentTextIcon, 
 } from '@heroicons/react/24/outline';
 
 const menuItems = [
@@ -19,7 +19,7 @@ const menuItems = [
   { name: 'Conferences', href: '/conferences', icon: UserCircleIcon },
   // { name: 'Competitions', href: '/', icon: TrophyIcon },
   { name: 'Membership', href: '/membershipform', icon: CalendarIcon },
-  // { name: 'Articles', href: '/articles', icon: DocumentTextIcon },
+  { name: 'Articles', href: '/articles', icon: DocumentTextIcon },
   // { name: 'Gallery', href: '/gallery', icon: PhotoIcon },
   // { name: 'Volunteers', href: '/volunteers', icon: UserIcon },
   { name: 'Committee Members', href: '/committee-members', icon: IdentificationIcon },
