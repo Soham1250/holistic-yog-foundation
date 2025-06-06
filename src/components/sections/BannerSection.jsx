@@ -131,7 +131,7 @@ const BannerSection = ({
               </div>
               
               <div className="mt-6 flex flex-wrap gap-3">
-                <Link href="/conferences" className="flex-1">
+                <Link href="https://docs.google.com/forms/d/e/1FAIpQLScYVhWJ5s0hwffZE57OALRwqVFOuxxhCRxc5xraTBhe_yqF2Q/viewform" target="_blank" rel="noopener noreferrer" className="flex-1">
                   <button className="w-full bg-orange-500 hover:bg-orange-600 text-white font-medium py-2 px-6 rounded-full transition-colors">
                     Register Now
                   </button>

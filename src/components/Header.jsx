@@ -27,11 +27,7 @@ const Header = ({ onSidebarToggle }) => {
             <Link href="/" className="flex items-center gap-2 transform hover:scale-105 transition-transform duration-300">
               <div className="w-9 h-9 relative">
                 <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="w-9 h-9 rounded-full bg-gradient-to-r from-blue-400 to-orange-400 flex items-center justify-center overflow-hidden">
-                    <div className="w-7 h-7 flex items-center justify-center text-white">
-                      <span className="text-lg">🧘</span>
-                    </div>
-                  </div>
+                <Image src="/images/Logos/74587ee9da3e12de144be0d9d111f4cdddd719e0.png" alt="Logo" width={192} height={192} />
                 </div>
               </div>
               <h1 className="text-lg font-mono font-semibold tracking-wide text-[#1a2a3a]">HOLISTIC YOG FOUNDATION</h1>

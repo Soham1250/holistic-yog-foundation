@@ -4,7 +4,7 @@ import { Montserrat, Roboto } from 'next/font/google';
 import React from 'react';
 const HeadingSection = ({ 
   title = "Yoga Education for an Enlightened Future",
-  subtitle = "Empowering seniors & communities through yoga. Blending tradition and wellness to foster strength, balance, and peace for every stage of life."
+  subtitle = "Empowering seniors & communities through the transformative power of yoga. We blend ancient traditions with modern wellness practices to foster physical strength, mental clarity, emotional balance, and spiritual peace at every stage of life. Our holistic approach creates a supportive environment where individuals can thrive, connect, and discover their full potential through the timeless wisdom of yoga."
 }) => {
   return (
     <div className="bg-white rounded-lg p-6 h-full flex flex-col justify-between">

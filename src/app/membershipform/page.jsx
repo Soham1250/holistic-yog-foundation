@@ -62,16 +62,6 @@ export default function MembershipFormPage() {
   const [showPassword, setShowPassword] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleDownloadForm = () => {
-    // Create a temporary link element
-    const link = document.createElement('a');
-    link.href = '/blank-membership-form.pdf'; // Update this path to your actual PDF location
-    link.download = 'Holistic-Yog-Foundation-Membership-Form.pdf';
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-  };
-
   const handleInputChange = (e) => {
     const { name, value, type, checked } = e.target;
     setFormData({
@@ -111,18 +101,6 @@ export default function MembershipFormPage() {
               <p className="text-gray-600 max-w-2xl mx-auto">
                 Join Holistic Yog Foundation and become part of a thriving community dedicated to wellness and personal growth.
               </p>
-              <div className="flex justify-center mb-8">
-                <button
-                  type="button"
-                  onClick={handleDownloadForm}
-                  className="bg-orange-500 hover:bg-orange-600 text-white flex items-center px-6 py-2 border border-orange-500 text-orange-500 rounded-full hover:bg-orange-50 transition-colors"
-                >
-                  <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
-                  </svg>
-                  Download Blank Form
-                </button>
-              </div>
             </div>
             <form onSubmit={handleSubmit}>
               {/* Personal Information */}
@@ -294,7 +272,7 @@ export default function MembershipFormPage() {
                 
                 <div>
                   <label htmlFor="pinCode" className="block text-gray-700 font-medium mb-1">
-                    Pin code<span className="text-red-500">*</span>
+                    Pin code (numeric values only)<span className="text-red-500">*</span>
                   </label>
                   <input
                     type="text"
@@ -313,7 +291,7 @@ export default function MembershipFormPage() {
                 
                 <div>
                   <label htmlFor="phoneNo" className="block text-gray-700 font-medium mb-1">
-                    Phone No<span className="text-red-500">*</span>
+                    Phone No (numeric values only)<span className="text-red-500">*</span>
                   </label>
                   <input
                     type="tel"
@@ -332,7 +310,7 @@ export default function MembershipFormPage() {
                 
                 <div>
                   <label htmlFor="mobile" className="block text-gray-700 font-medium mb-1">
-                    Mobile<span className="text-red-500">*</span>
+                    Mobile (numeric values only)<span className="text-red-500">*</span>
                   </label>
                   <input
                     type="tel"
@@ -776,27 +754,7 @@ export default function MembershipFormPage() {
 
               {/* Membership Type and Agreements */}
               <div className="mb-8">
-                <label className="block text-gray-700 font-medium mb-3">
-                  Type of Membership (required)<span className="text-red-500">*</span>
-                </label>
-                <div className="flex items-center mb-4">
-                  <input
-                    type="checkbox"
-                    id="lifeMember"
-                    name="membershipType"
-                    value="Life Member (Ajeevan Sadassya)"
-                    onChange={handleInputChange}
-                    className="mr-2"
-                    required
-                  />
-                  <label htmlFor="lifeMember" className="text-gray-700">
-                    Life Member (Ajeevan Sadassya)
-                  </label>
-                </div>
-              </div>
-
-              <div className="mb-8">
-                <div className="flex items-center mb-4">
+                <div className="flex items-center mb-4 text-lg">
                   <input
                     type="checkbox"
                     id="confirmInfo"
@@ -811,7 +769,7 @@ export default function MembershipFormPage() {
                   </label>
                 </div>
                 
-                <div className="flex items-center mb-4">
+                {/* <div className="flex items-center mb-4 text-lg">
                   <input
                     type="checkbox"
                     id="agreeCode"
@@ -822,9 +780,9 @@ export default function MembershipFormPage() {
                     required
                   />
                   <label htmlFor="agreeCode" className="text-gray-700">
-                    I have read and agree to abide by the Holistic Yog Foundation <Link href="#" className="text-orange-500 hover:underline">Code of conduct</Link> and ethics.<span className="text-red-500">*</span>
+                    I have read and agree to abide by the Holistic Yog Foundation and ethics.<span className="text-red-500">*</span>
                   </label>
-                </div>
+                </div> */}
               </div>
 
               {/* Submit Button */}
