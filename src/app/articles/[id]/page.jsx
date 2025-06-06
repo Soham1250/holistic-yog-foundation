@@ -21,6 +21,22 @@ const articles = [
     readTime: '8 min read',
     pdfUrl: '/pdfs/Articles/cervical.pdf',
     excerpt: 'Discover gentle yoga practices specifically designed to improve cervical spine health and reduce neck pain.',
+  },
+  {
+    id: 3,
+    title: 'Holistic Approach to Yoga - Dr. Balwant Singh',
+    date: 'Monday, June 3, 2024',
+    readTime: '12 min read',
+    pdfUrl: '/pdfs/Articles/Dr. Balwant Singh HYF.pdf',
+    excerpt: 'Insights from Dr. Balwant Singh on integrating traditional yoga practices with modern therapeutic approaches for holistic well-being.'
+  },
+  {
+    id: 4,
+    title: 'Therapeutic Yoga Insights - Dr. Nilesh Bansode',
+    date: 'Friday, May 24, 2024',
+    readTime: '15 min read',
+    pdfUrl: '/pdfs/Articles/Dr. Nilesh Bansode HYF.pdf',
+    excerpt: 'Dr. Nilesh Bansode shares expert knowledge on therapeutic applications of yoga for various health conditions.'
   }
 ];
 
@@ -59,22 +75,22 @@ export default function ArticlePage({ params }) {
       <div className="bg-white shadow-sm">
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center">
-            <Link 
-              href="/articles" 
+            <Link
+              href="/articles"
               className="text-blue-600 hover:text-blue-800 flex items-center"
             >
-              <svg 
-                className="w-5 h-5 mr-1" 
-                fill="none" 
-                stroke="currentColor" 
-                viewBox="0 0 24 24" 
+              <svg
+                className="w-5 h-5 mr-1"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
                 xmlns="http://www.w3.org/2000/svg"
               >
-                <path 
-                  strokeLinecap="round" 
-                  strokeLinejoin="round" 
-                  strokeWidth={2} 
-                  d="M10 19l-7-7m0 0l7-7m-7 7h18" 
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M10 19l-7-7m0 0l7-7m-7 7h18"
                 />
               </svg>
               Back to Articles
@@ -93,9 +109,9 @@ export default function ArticlePage({ params }) {
               {article.date} • {article.readTime}
             </p>
           </div>
-          
+
           <div className="w-full h-[calc(100vh-200px)]">
-            <iframe 
+            <iframe
               src={`${article.pdfUrl}#toolbar=0&navpanes=0&scrollbar=0&view=FitH`}
               className="w-full h-full"
               title={article.title}
@@ -105,7 +121,7 @@ export default function ArticlePage({ params }) {
           </div>
 
           <div className="p-4 border-t border-gray-200 text-right">
-            <a 
+            <a
               href={article.pdfUrl}
               download
               className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"

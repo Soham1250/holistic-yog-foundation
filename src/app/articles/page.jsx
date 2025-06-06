@@ -13,8 +13,7 @@ export default function ArticlesPage() {
             date: 'Friday, May 15, 2024',
             readTime: '10 min read',
             pdfUrl: '/pdfs/Articles/Yoga in Managing Sciatica.pdf',
-            excerpt: 'Explore how yoga can effectively help in managing and relieving sciatica pain through targeted postures and breathing techniques.',
-            image: '/images/yoga in managing Sciatica.jpg'
+            excerpt: 'Explore how yoga can effectively help in managing and relieving sciatica pain through targeted postures and breathing techniques.'
         },
         {
             id: 2,
@@ -22,8 +21,23 @@ export default function ArticlesPage() {
             date: 'Wednesday, April 30, 2024',
             readTime: '8 min read',
             pdfUrl: '/pdfs/Articles/cervical.pdf',
-            excerpt: 'Discover gentle yoga practices specifically designed to improve cervical spine health and reduce neck pain.',
-            image: '/images/yoga in managing Sciatica.jpg'
+            excerpt: 'Discover gentle yoga practices specifically designed to improve cervical spine health and reduce neck pain.'
+        },
+        {
+            id: 3,
+            title: 'Holistic Approach to Yoga - Dr. Balwant Singh',
+            date: 'Monday, June 3, 2024',
+            readTime: '12 min read',
+            pdfUrl: '/pdfs/Articles/Dr. Balwant Singh HYF.pdf',
+            excerpt: 'Insights from Dr. Balwant Singh on integrating traditional yoga practices with modern therapeutic approaches for holistic well-being.'
+        },
+        {
+            id: 4,
+            title: 'Therapeutic Yoga Insights - Dr. Nilesh Bansode',
+            date: 'Friday, May 24, 2024',
+            readTime: '15 min read',
+            pdfUrl: '/pdfs/Articles/Dr. Nilesh Bansode HYF.pdf',
+            excerpt: 'Dr. Nilesh Bansode shares expert knowledge on therapeutic applications of yoga for various health conditions.'
         }
     ];
 
@@ -46,30 +60,22 @@ export default function ArticlesPage() {
                         <Link
                             href={`/articles/${article.id}`}
                             key={article.id}
-                            className="rounded-2xl overflow-hidden hover:shadow-md transition-shadow duration-300 flex flex-col md:flex-row h-full"
+                            className="rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 flex flex-col h-full border border-gray-100 hover:border-blue-50 transform hover:-translate-y-1 bg-white"
                         >
-                            <div className="md:w-5/12 h-48 md:h-auto relative">
-                                <Image
-                                    src={article.image}
-                                    alt={article.title}
-                                    fill
-                                    className="object-cover"
-                                />
-                            </div>
-                            <div className="p-6 md:w-7/12 flex flex-col justify-between">
+                            <div className="p-6 flex flex-col justify-between h-full">
                                 <div>
-                                    <h2 className="text-xl font-semibold text-gray-800 mb-2 line-clamp-2">
+                                    <h2 className="text-xl font-semibold text-gray-800 mb-2">
                                         {article.title}
                                     </h2>
                                     <p className="text-gray-500 text-sm mb-4">
-                                        {article.date}
+                                        {article.date} • {article.readTime}
                                     </p>
-                                    <p className="text-gray-600 line-clamp-2">
+                                    <p className="text-gray-600">
                                         {article.excerpt}
                                     </p>
                                 </div>
-                                <div className="mt-4 flex items-center text-blue-600 text-sm font-medium">
-                                    Read More
+                                <div className="mt-6 flex items-center text-blue-600 text-sm font-medium">
+                                    Read Article
                                     <svg
                                         className="w-4 h-4 ml-1"
                                         fill="none"
