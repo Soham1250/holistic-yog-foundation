@@ -34,7 +34,7 @@ const WhyUsSection = ({
   title = "Why Holistic Yog?",
   description = "Our community-driven approach focuses on the complete well-being of body, mind, and spirit through yoga, meditation, and holistic wellness practices.",
   items = defaultItems,
-  phoneNumber = "9723456789"
+  phoneNumber = "9820596638"
 }) => {
   return (
     <div className="bg-[#fdf7f2] rounded-lg p-8">
