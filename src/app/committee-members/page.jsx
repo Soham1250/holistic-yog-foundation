@@ -6,35 +6,47 @@ import Link from 'next/link';
 
 const committeeMembers = [
   {
-    id: 1,
+    id: '1',
     name: 'Dr. Balwant Singh',
     designation: 'President',
     image: '/images/Committee-members/BalwantSingh.jpg',
+    achievementsPdf: '/pdfs/DrBalwantSinghInfo.pdf',
   },
   {
-    id: 2,
+    id: '2',
     name: 'Dr. Nilesh Bansode',
     designation: 'Vice President',
     image: '/images/Committee-members/NileshBansode.jpg',
+    achievementsPdf: '/pdfs/Dr. Nilesh Bansode - bio data.pdf',
   },
   {
-    id: 3,
+    id: '3',
+    name: 'Dr. Yadnyeshar Bagrao',
+    designation: 'Secretary',
+    image: '/images/Committee-members/DrYadnyesharBagraoCopy.jpg',
+    achievementsPdf: '/pdfs/Dr. Y.D.BAGRAO  Biodata - 16.01.2025.pdf',
+  },
+  {
+    id: '4',
     name: 'Dr. Rashmita Sabat',
     designation: 'Director',
     image: '/images/Committee-members/R S 2.jpg',
+    achievementsPdf: '/pdfs/Dr._Rashmita_Sabat_CV_2025MAY.pdf',
   },
   {
-    id: 4,
+    id: '5',
     name: 'Mrs. Suchita Dhamale',
     designation: 'Director',
     image: '/images/Committee-members/SuchitaDhamale.jpg',
+    achievementsPdf: '/pdfs/C V_ Suchita Dhamale.pdf',
   },
   {
-    id: 5,
-    name: 'Dr. Yadnyeshar Bagrao',
-    designation: 'Secretary',
-    image: '/images/Committee-members/DrYadnyesharBagrao.jpg',
-  },
+    id: '6',
+    name: 'Dr. Vijay Shashikant Tandalekar',
+    designation: 'Director',
+    image: '/images/Committee-members/VinaySir.jpg',
+    achievementsPdf: '/pdfs/Vijay CV.pdf',
+  }
 ];
 
 const CommitteeMemberCard = ({ member }) => {

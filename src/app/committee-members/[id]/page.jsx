@@ -22,25 +22,32 @@ const committeeMembers = [
   },
   {
     id: '3',
+    name: 'Dr. Yadnyeshar Bagrao',
+    designation: 'Secretary',
+    image: '/images/Committee-members/DrYadnyesharBagrao.jpg',
+    achievementsPdf: '/pdfs/Dr. Y.D.BAGRAO  Biodata - 16.01.2025.pdf',
+  },
+  {
+    id: '4',
     name: 'Dr. Rashmita Sabat',
     designation: 'Director',
     image: '/images/Committee-members/R S 2.jpg',
     achievementsPdf: '/pdfs/Dr._Rashmita_Sabat_CV_2025MAY.pdf',
   },
   {
-    id: '4',
+    id: '5',
     name: 'Mrs. Suchita Dhamale',
     designation: 'Director',
     image: '/images/Committee-members/SuchitaDhamale.jpg',
     achievementsPdf: '/pdfs/C V_ Suchita Dhamale.pdf',
   },
   {
-    id: '5',
-    name: 'Dr. Yadnyeshar Bagrao',
-    designation: 'Secretary',
-    image: '/images/Committee-members/DrYadnyesharBagrao.jpg',
-    achievementsPdf: '/pdfs/Dr. Y.D.BAGRAO  Biodata - 16.01.2025.pdf',
-  },
+    id: '6',
+    name: 'Dr. Vijay Shashikant Tandalekar',
+    designation: 'Director',
+    image: '/images/Committee-members/VinaySir.jpg',
+    achievementsPdf: '/pdfs/Vijay CV.pdf',
+  }
 ];
 
 export default function MemberDetailPage() {
