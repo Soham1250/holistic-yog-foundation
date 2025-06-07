@@ -10,7 +10,6 @@ export default function ArticlesPage() {
         {
             id: 1,
             title: 'Yoga in Managing Sciatica',
-            date: 'Friday, May 15, 2024',
             readTime: '10 min read',
             pdfUrl: '/pdfs/Articles/Yoga in Managing Sciatica.pdf',
             excerpt: 'Explore how yoga can effectively help in managing and relieving sciatica pain through targeted postures and breathing techniques.'
@@ -18,7 +17,6 @@ export default function ArticlesPage() {
         {
             id: 2,
             title: 'Yoga for Cervical Health',
-            date: 'Wednesday, April 30, 2024',
             readTime: '8 min read',
             pdfUrl: '/pdfs/Articles/cervical.pdf',
             excerpt: 'Discover gentle yoga practices specifically designed to improve cervical spine health and reduce neck pain.'
@@ -26,7 +24,6 @@ export default function ArticlesPage() {
         {
             id: 3,
             title: 'Holistic Approach to Yoga - Dr. Balwant Singh',
-            date: 'Monday, June 3, 2024',
             readTime: '12 min read',
             pdfUrl: '/pdfs/Articles/Dr. Balwant Singh HYF.pdf',
             excerpt: 'Insights from Dr. Balwant Singh on integrating traditional yoga practices with modern therapeutic approaches for holistic well-being.'
@@ -34,7 +31,6 @@ export default function ArticlesPage() {
         {
             id: 4,
             title: 'Therapeutic Yoga Insights - Dr. Nilesh Bansode',
-            date: 'Friday, May 24, 2024',
             readTime: '15 min read',
             pdfUrl: '/pdfs/Articles/Dr. Nilesh Bansode HYF.pdf',
             excerpt: 'Dr. Nilesh Bansode shares expert knowledge on therapeutic applications of yoga for various health conditions.'
@@ -68,7 +64,7 @@ export default function ArticlesPage() {
                                         {article.title}
                                     </h2>
                                     <p className="text-gray-500 text-sm mb-4">
-                                        {article.date} • {article.readTime}
+                                        {article.readTime}
                                     </p>
                                     <p className="text-gray-600">
                                         {article.excerpt}
