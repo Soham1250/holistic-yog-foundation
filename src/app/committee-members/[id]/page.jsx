@@ -24,7 +24,7 @@ const committeeMembers = [
     id: '3',
     name: 'Dr. Rashmita Sabat',
     designation: 'Director',
-    image: '/images/People/pexels-danxavier-1239291.jpg',
+    image: '/images/Committee-members/R S 2.jpg',
     achievementsPdf: '/pdfs/Dr._Rashmita_Sabat_CV_2025MAY.pdf',
   },
   {

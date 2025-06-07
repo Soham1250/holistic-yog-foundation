@@ -21,7 +21,7 @@ const committeeMembers = [
     id: 3,
     name: 'Dr. Rashmita Sabat',
     designation: 'Director',
-    image: '/images/People/pexels-danxavier-1239291.jpg',
+    image: '/images/Committee-members/R S 2.jpg',
   },
   {
     id: 4,
@@ -36,7 +36,6 @@ const committeeMembers = [
     image: '/images/Committee-members/DrYadnyesharBagrao.jpg',
   },
 ];
-
 
 const CommitteeMemberCard = ({ member }) => {
   return (
