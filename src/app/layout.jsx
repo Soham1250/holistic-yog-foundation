@@ -16,6 +16,9 @@ const geistMono = Geist_Mono({
 export const metadata = {
   title: "Holistic Yog Foundation",
   description: "Discover the path to holistic wellness through yoga",
+  icons: {
+    icon: '/images/Logos/Logo.ico',
+  },
 };
 
 export default function RootLayout({
@@ -23,6 +26,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${geist.variable} ${geistMono.variable}`}>
+      <head>
+        <link rel="icon" href="/images/Logos/Logo.ico" />
+      </head>
       <body className="bg-white">
         <SectionProvider>
           <Layout>
