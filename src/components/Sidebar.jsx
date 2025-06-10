@@ -9,6 +9,7 @@ import {
   StarIcon, 
   IdentificationIcon,
   DocumentTextIcon, 
+  PhotoIcon,
 } from '@heroicons/react/24/outline';
 
 const menuItems = [
@@ -20,7 +21,7 @@ const menuItems = [
   // { name: 'Competitions', href: '/', icon: TrophyIcon },
   { name: 'Membership', href: '/membershipform', icon: CalendarIcon },
   { name: 'Articles', href: '/articles', icon: DocumentTextIcon },
-  // { name: 'Gallery', href: '/gallery', icon: PhotoIcon },
+  { name: 'Gallery', href: '/gallery', icon: PhotoIcon },
   // { name: 'Volunteers', href: '/volunteers', icon: UserIcon },
   { name: 'Committee Members', href: '/committee-members', icon: IdentificationIcon },
   { name: 'Life Members', href: '/lifetime-members', icon: StarIcon },
