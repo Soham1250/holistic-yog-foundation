@@ -93,7 +93,7 @@ const CommitteeMemberCard = ({ member }) => {
 
 export default function CommitteeMembersPage() {
   return (
-    <div className="container mx-auto px-4 py-12">
+    <div className="container mx-auto bg-[#FDF8F3] px-4 py-12">
       <h1 className="text-3xl font-bold text-center mb-8 text-gray-800">Our Committee Members</h1>
       <p className="text-center text-gray-600 max-w-2xl mx-auto mb-12">
       Our members are passionate individuals from all walks of life, united by a shared commitment to holistic living, mindfulness, and continuous personal growth through yoga.
