@@ -42,7 +42,7 @@ const GalleryPage = () => {
                 src={image.src}
                 alt={image.alt}
                 fill
-                className="object-cover"
+                className="object-contain"
                 sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
                 placeholder="blur"
                 blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkYPhfDwAChwGA60e6kgAAAABJRU5ErkJggg=="
