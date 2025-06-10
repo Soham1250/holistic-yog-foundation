@@ -9,6 +9,7 @@ const committeeMembers = [
     id: '1',
     name: 'Dr. Balwant Singh',
     designation: 'President',
+    Qualification:' M A (Hindi) M Sc (Yoga) M P Ed (Ph D)',
     image: '/images/Committee-members/BalwantSingh.jpg',
     achievementsPdf: '/pdfs/DrBalwantSinghInfo.pdf',
   },
@@ -16,6 +17,7 @@ const committeeMembers = [
     id: '2',
     name: 'Dr. Nilesh Bansode',
     designation: 'Vice President',
+    Qualification:'M P Ed, Ph D',
     image: '/images/Committee-members/NileshBansode.jpg',
     achievementsPdf: '/pdfs/Dr. Nilesh Bansode - bio data.pdf',
   },
@@ -23,6 +25,7 @@ const committeeMembers = [
     id: '3',
     name: 'Dr. Yadnyeshar Bagrao',
     designation: 'Secretary',
+    Qualification:'M P Ed, Ph D',
     image: '/images/Committee-members/DrYadnyesharBagraoCopy.jpg',
     achievementsPdf: '/pdfs/Dr. Y.D.BAGRAO  Biodata - 16.01.2025.pdf',
   },
@@ -30,6 +33,7 @@ const committeeMembers = [
     id: '4',
     name: 'Dr. Rashmita Sabat',
     designation: 'Director',
+    Qualification:'M A (Yoga) Ph D',
     image: '/images/Committee-members/R S 2.jpg',
     achievementsPdf: '/pdfs/Dr._Rashmita_Sabat_CV_2025MAY.pdf',
   },
@@ -37,6 +41,7 @@ const committeeMembers = [
     id: '5',
     name: 'Mrs. Suchita Dhamale',
     designation: 'Director',
+    Qualification:'M A (Sanskrit) M P Ed, Ph D ',
     image: '/images/Committee-members/SuchitaDhamale.jpg',
     achievementsPdf: '/pdfs/C V_ Suchita Dhamale.pdf',
   },
@@ -44,9 +49,18 @@ const committeeMembers = [
     id: '6',
     name: 'Dr. Vijay Shashikant Tandalekar',
     designation: 'Director',
+    Qualification:'M A (Yoga) M P Ed, Ph D',
     image: '/images/Committee-members/VinaySir.jpg',
     achievementsPdf: '/pdfs/Vijay CV.pdf',
-  }
+  },
+  {
+    id: '7',
+    name: 'Mr. Vinay Savla',
+    designation: 'Website Developer',
+    Qualification:'B. Tech',
+    image: '/images/Committee-members/Vinay.jpg',
+    achievementsPdf: '/pdfs/Vinay Savla Resume (1).pdf',
+  },
 ];
 
 const CommitteeMemberCard = ({ member }) => {
@@ -58,7 +72,7 @@ const CommitteeMemberCard = ({ member }) => {
             src={member.image}
             alt={member.name}
             fill
-            className="object-cover transition-transform duration-300 group-hover:scale-105"
+            className="object-contain transition-transform duration-300 group-hover:scale-105"
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           />
         </div>
@@ -67,6 +81,7 @@ const CommitteeMemberCard = ({ member }) => {
             {member.name}
           </h3>
           <p className="text-orange-500 text-sm font-medium mt-1">{member.designation}</p>
+          <p className='text-orange-500 text-sm font-medium mt-1'>{member.Qualification}</p>
           <p className="text-xs text-gray-500 mt-2 group-hover:text-gray-700 transition-colors">
             Click to view achievements →
           </p>

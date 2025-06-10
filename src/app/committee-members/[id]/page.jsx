@@ -47,12 +47,20 @@ const committeeMembers = [
     designation: 'Director',
     image: '/images/Committee-members/VinaySir.jpg',
     achievementsPdf: '/pdfs/Vijay CV.pdf',
-  }
+  }, 
+  {
+    id: '7',
+    name: 'Mr. Vinay Savla',
+    designation: 'Website Developer',
+    Qualification:'B. Tech',
+    image: '/images/Committee-members/Vinay.jpg',
+    achievementsPdf: '/pdfs/Vinay Savla Resume (1).pdf',
+  },
 ];
 
 export default function MemberDetailPage() {
   const { id } = useParams();
-    const [member, setMember] = useState(null);
+  const [member, setMember] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
@@ -86,27 +94,27 @@ export default function MemberDetailPage() {
     <div className="container mx-auto px-4 py-12">
       <div className="max-w-4xl mx-auto">
         {/* Back Button */}
-        <Link 
+        <Link
           href="/committee-members"
           className="inline-flex items-center text-gray-600 hover:text-orange-500 mb-8 transition-colors text-sm"
         >
-          <svg 
-            className="w-4 h-4 mr-1" 
-            fill="none" 
-            stroke="currentColor" 
-            viewBox="0 0 24 24" 
+          <svg
+            className="w-4 h-4 mr-1"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
             xmlns="http://www.w3.org/2000/svg"
           >
-            <path 
-              strokeLinecap="round" 
-              strokeLinejoin="round" 
-              strokeWidth={2} 
-              d="M10 19l-7-7m0 0l7-7m-7 7h18" 
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M10 19l-7-7m0 0l7-7m-7 7h18"
             />
           </svg>
           Back to Committee Members
         </Link>
-        
+
         {/* Member Header */}
         <div className="flex flex-col md:flex-row gap-8 items-center mb-12">
           <div className="w-48 h-48 md:w-64 md:h-64 relative rounded-full overflow-hidden border-4 border-white shadow-lg">
@@ -114,7 +122,7 @@ export default function MemberDetailPage() {
               src={member.image}
               alt={member.name}
               fill
-              className="object-cover"
+              className="object-contain"
               sizes="(max-width: 768px) 192px, 256px"
               priority
             />
@@ -131,18 +139,18 @@ export default function MemberDetailPage() {
         {/* Achievements Section */}
         <div className="mt-12">
           <h2 className="text-2xl font-bold text-gray-800 mb-6">Achievements & Credentials</h2>
-          
+
           {/* PDF Viewer */}
           <div className="bg-white rounded-lg shadow-md p-4">
             <div className="w-full h-[80vh]">
-              <iframe 
+              <iframe
                 src={`/pdfs/${member.achievementsPdf.split('/').pop()}`}
                 className="w-full h-full rounded-lg border border-gray-200"
                 title={`${member.name}'s Achievements`}
               >
                 <p className="text-center p-4">
-                  Your browser does not support PDFs. 
-                  <a 
+                  Your browser does not support PDFs.
+                  <a
                     href={`/pdfs/${member.achievementsPdf.split('/').pop()}`}
                     className="text-orange-500 hover:underline"
                     target="_blank"

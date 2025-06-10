@@ -11,6 +11,7 @@ const LifeTimeMembers = [
     name: 'Dr. Rohini Shetty',
     designation: 'Life Time Member',
     image: '/images/Committee-members/DrRohiniShetty.jpg',
+    qualification:'B.Com, B.P.Ed, NSNIS (Kabaddi), M.P.Ed, Ph.D. (Physical Education)',
     achievementsPdf: '/pdfs/Achievements_of_Dr_Rohini_Prasad_Shetty.docx.pdf',
   },
 ];
@@ -24,7 +25,7 @@ const LifeTimeMemberCard = ({ member }) => {
             src={member.image}
             alt={member.name}
             fill
-            className="object-cover transition-transform duration-300 group-hover:scale-105"
+            className="object-contain transition-transform duration-300 group-hover:scale-105"
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           />
         </div>
@@ -33,6 +34,7 @@ const LifeTimeMemberCard = ({ member }) => {
             {member.name}
           </h3>
           <p className="text-orange-500 text-sm font-medium mt-1">{member.designation}</p>
+          <p className="text-xs text-orange-500 font-sm mt-1">{member.qualification}</p>
           <p className="text-xs text-gray-500 mt-2 group-hover:text-gray-700 transition-colors">
             Click to view achievements →
           </p>
@@ -43,8 +45,6 @@ const LifeTimeMemberCard = ({ member }) => {
 };
 
 export default function LifeTimeMembersPage() {
-  const [searchTerm, setSearchTerm] = useState('');
-  const [activeTab, setActiveTab] = useState('life');
 
   const filteredMembers = LifeTimeMembers.filter(member => 
     (member.name.toLowerCase().includes(searchTerm.toLowerCase()) ||

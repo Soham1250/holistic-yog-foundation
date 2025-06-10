@@ -11,6 +11,7 @@ const lifetimeMembers = [
     id: '1',
     name: 'Dr. Rohini Shetty',
     designation: 'Life Time Member',
+    qualification:'B.Com, B.P.Ed, NSNIS (Kabaddi), M.P.Ed, Ph.D. (Physical Education)',
     image: '/images/Committee-members/DrRohiniShetty.jpg',
     achievementsPdf: '/pdfs/Achievements_of_Dr_Rohini_Prasad_Shetty.docx.pdf',
   },
@@ -81,7 +82,7 @@ export default function LifetimeMemberDetailPage() {
               src={member.image}
               alt={member.name}
               fill
-              className="object-cover"
+              className="object-contain"
               sizes="(max-width: 768px) 192px, 256px"
               priority
             />
