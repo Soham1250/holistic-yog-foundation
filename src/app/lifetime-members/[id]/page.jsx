@@ -10,10 +10,10 @@ const lifetimeMembers = [
   {
     id: '1',
     name: 'Dr. Rohini Shetty',
-    designation: 'Life Time Member',
+    membershipNumber: 'HYF/LM/001',
     qualification:'B.Com, B.P.Ed, NSNIS (Kabaddi), M.P.Ed, Ph.D. (Physical Education)',
     image: '/images/Committee-members/DrRohiniShetty.jpg',
-    achievementsPdf: '/pdfs/Achievements_of_Dr_Rohini_Prasad_Shetty.docx.pdf',
+    achievementsPdf: '/pdfs/DrRohiniShetty.pdf',
   },
   // Add more lifetime members as needed
 ];
@@ -89,7 +89,7 @@ export default function LifetimeMemberDetailPage() {
           </div>
           <div className="text-center md:text-left">
             <h1 className="text-3xl md:text-4xl font-bold text-gray-800">{member.name}</h1>
-            <p className="text-xl text-orange-500 font-medium mt-2">{member.designation}</p>
+            <p className="text-xl text-orange-500 font-medium mt-2">Lifetime Membership Number: {member.membershipNumber}</p>
           </div>
         </div>
 

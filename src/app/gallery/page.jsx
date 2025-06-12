@@ -19,6 +19,14 @@ const galleryImages = [
     src: '/images/gallery/image4.jpg', 
     alt: 'Yoga Session 4' 
   },
+  { id: 5, 
+    src: '/images/gallery/image5.jpg', 
+    alt: 'Yoga Session 5' 
+  },
+  { id: 6, 
+    src: '/images/gallery/image6.jpg', 
+    alt: 'Yoga Session 6' 
+  },
 ];
 
 const GalleryPage = () => {

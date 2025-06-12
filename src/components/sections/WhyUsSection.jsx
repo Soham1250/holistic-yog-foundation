@@ -34,7 +34,8 @@ const WhyUsSection = ({
   title = "Why Holistic Yog?",
   description = "Our community-driven approach focuses on the complete well-being of body, mind, and spirit through yoga, meditation, and holistic wellness practices.",
   items = defaultItems,
-  phoneNumber = "9820596638"
+  phoneNumber = "+919820596638",
+  phoneNumber2 = "+919960764653"
 }) => {
   return (
     <div className="bg-[#fdf7f2] rounded-lg p-8">
@@ -65,6 +66,10 @@ const WhyUsSection = ({
             <a href={`tel:${phoneNumber}`} className="flex items-center border border-gray-300 rounded-full px-4 py-2 text-gray-700 hover:bg-gray-100 transition-colors">
               <PhoneIcon className="w-4 h-4 mr-2 text-blue-500" />
               {phoneNumber}
+            </a>
+            <a href={`tel:${phoneNumber2}`} className="flex items-center border border-gray-300 rounded-full px-4 py-2 text-gray-700 hover:bg-gray-100 transition-colors">
+              <PhoneIcon className="w-4 h-4 mr-2 text-blue-500" />
+              {phoneNumber2}
             </a>
           </div>
         </div>

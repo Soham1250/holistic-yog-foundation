@@ -8,10 +8,10 @@ const LifeTimeMembers = [
   {
     id: '1',
     name: 'Dr. Rohini Shetty',
-    designation: 'Life Time Member',
+    membershipNumber: 'HYF/LM/001',
     image: '/images/Committee-members/DrRohiniShetty.jpg',
     qualification:'B.Com, B.P.Ed, NSNIS (Kabaddi), M.P.Ed, Ph.D. (Physical Education)',
-    achievementsPdf: '/pdfs/Achievements_of_Dr_Rohini_Prasad_Shetty.docx.pdf',
+    achievementsPdf: '/pdfs/DrRohiniShetty.pdf',
   },
 ];
 
@@ -19,7 +19,7 @@ const LifeTimeMemberCard = ({ member }) => {
   return (
     <Link href={`/lifetime-members/${member.id}`} className="block group">
       <div className="bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300 hover:shadow-lg hover:-translate-y-1 h-full flex flex-col">
-        <div className="relative h-64 w-full overflow-hidden">
+        {/* <div className="relative h-64 w-full overflow-hidden">
           <Image
             src={member.image}
             alt={member.name}
@@ -27,12 +27,12 @@ const LifeTimeMemberCard = ({ member }) => {
             className="object-contain transition-transform duration-300 group-hover:scale-105"
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           />
-        </div>
+        </div> */}
         <div className="p-4 flex-1 flex flex-col">
           <h3 className="text-lg font-semibold text-gray-800 group-hover:text-orange-500 transition-colors">
             {member.name}
           </h3>
-          <p className="text-orange-500 text-sm font-medium mt-1">{member.designation}</p>
+          <p className="text-orange-500 text-sm font-medium mt-1">Lifetime Membership Number: {member.membershipNumber}</p>
           <p className="text-xs text-orange-500 font-sm mt-1">{member.qualification}</p>
           <p className="text-xs text-gray-500 mt-2 group-hover:text-gray-700 transition-colors">
             Click to view achievements →
