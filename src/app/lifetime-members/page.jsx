@@ -9,9 +9,17 @@ const LifeTimeMembers = [
     id: '1',
     name: 'Dr. Rohini Shetty',
     membershipNumber: 'HYF/LM/001',
-    image: '/images/Committee-members/DrRohiniShetty.jpg',
+    image: '/images/lifetime-members/DrRohiniShetty.jpg',
     qualification:'B.Com, B.P.Ed, NSNIS (Kabaddi), M.P.Ed, Ph.D. (Physical Education)',
     achievementsPdf: '/pdfs/DrRohiniShetty.pdf',
+  },
+  {
+    id: '2',
+    name: 'Mohammad kaleem Ali Rizvi',
+    membershipNumber: 'HYF/LM/002',
+    image: '/images/lifetime-members/MohammadkaleemAliRizvi.jpg',
+    qualification:'B.A., M.A., B.P.Ed, M.P.Ed, Ph.D. (Physical Education)',
+    achievementsPdf: '/pdfs/MohammadkaleemAliRizvi.pdf',
   },
 ];
 
@@ -33,7 +41,7 @@ const LifeTimeMemberCard = ({ member }) => {
             {member.name}
           </h3>
           <p className="text-orange-500 text-sm font-medium mt-1">Lifetime Membership Number: {member.membershipNumber}</p>
-          <p className="text-xs text-orange-500 font-sm mt-1">{member.qualification}</p>
+          {/* <p className="text-xs text-orange-500 font-sm mt-1">{member.qualification}</p> */}
           <p className="text-xs text-gray-500 mt-2 group-hover:text-gray-700 transition-colors">
             Click to view achievements →
           </p>

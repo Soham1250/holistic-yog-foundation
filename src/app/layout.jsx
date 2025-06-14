@@ -1,4 +1,4 @@
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono, Poppins } from "next/font/google";
 import "./globals.css";
 import Layout from '../components/Layout';
 import { SectionProvider } from '@/contexts/SectionContext';
@@ -13,6 +13,12 @@ const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
 });
 
+const poppins = Poppins({
+  subsets: ["latin"],
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+  variable: "--font-poppins",
+});
+
 export const metadata = {
   title: "Holistic Yog Foundation",
   description: "Discover the path to holistic wellness through yoga",
@@ -25,7 +31,7 @@ export default function RootLayout({
   children,
 }) {
   return (
-    <html lang="en" className={`${geist.variable} ${geistMono.variable}`}>
+    <html lang="en" className={`${geist.variable} ${geistMono.variable} ${poppins.variable}`}>
       <head>
         <link rel="icon" href="/images/Logos/Logo.ico" />
       </head>

@@ -15,6 +15,14 @@ const lifetimeMembers = [
     image: '/images/Committee-members/DrRohiniShetty.jpg',
     achievementsPdf: '/pdfs/DrRohiniShetty.pdf',
   },
+  {
+    id: '2',
+    name: 'Mohammad kaleem Ali Rizvi',
+    membershipNumber: 'HYF/LM/002',
+    image: '/images/lifetime-members/MohammadkaleemAliRizvi.jpg',
+    qualification:'B.A., M.A., B.P.Ed, M.P.Ed, Ph.D. (Physical Education)',
+    achievementsPdf: '/pdfs/MohammadkaleemAliRizvi.pdf',
+  },
   // Add more lifetime members as needed
 ];
 

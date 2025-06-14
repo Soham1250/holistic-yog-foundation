@@ -35,7 +35,7 @@ const MembershipSection = ({
             </h2>
             <div className="flex items-baseline">
               <span className="text-4xl font-bold text-gray-900">{plan.price}</span>
-              <span className="text-xl text-gray-600 ml-2"> {plan.duration} purchase</span>
+              {/* <span className="text-xl text-gray-600 ml-2"> {plan.duration} purchase</span> */}
             </div>
           </div>
           

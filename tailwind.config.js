@@ -6,12 +6,12 @@ module.exports = {
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
-    extend: {
-      fontFamily: {
+    extend: {      fontFamily: {
         sans: ['var(--font-geist-sans)', 'sans-serif'],
         mono: ['var(--font-geist-mono)', 'monospace'],
         mont: ['var(--font-mont)'],
         roboto: ['var(--font-roboto)'],
+        poppins: ['var(--font-poppins)', 'sans-serif'],
       },
       colors: {
         primary: {

@@ -30,7 +30,7 @@ const Header = ({ onSidebarToggle }) => {
                 <Image src="/images/Logos/74587ee9da3e12de144be0d9d111f4cdddd719e0.png" alt="Logo" width={192} height={192} />
                 </div>
               </div>
-              <h1 className="text-lg font-mono font-semibold tracking-wide text-[#1a2a3a]">HOLISTIC YOG FOUNDATION</h1>
+              <h1 className="text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl font-poppins font-extrabold tracking-wide text-[#1a2a3a] whitespace-nowrap">HOLISTIC YOG FOUNDATION</h1>
             </Link>
           </div>
           
